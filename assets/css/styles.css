@@ -23,13 +23,15 @@ body {
 	align-content: left;
 }
 .footertabla {
-	background-color: #1178bd;
+	background-color: #2563eb;
+	width: 100%;
+	border: none;
+	}
+.footeritem {
 	font-size: 16px;
 	font-family: Arial;
-	border: none;
 	text-align: center;
-	padding-left: 170px;
-	padding-right: 170px;
-	margin: auto;
-	width: 100%;
-}
+	padding-left: 15px;
+	padding-right: 15px;
+	height: auto;
+	}
