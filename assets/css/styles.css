@@ -1,9 +1,14 @@
+* {
+    border: none
+}
+
 .header-principal {
     display: flex;
     justify-content: space-around; /* Separa el logo de los enlaces */
     align-items: center; /* Centra los elementos verticalmente */
-    background-color: #e2e8f0; /* Color de fondo (puedes cambiarlo) */
+    background-color: #f8fafc; /* Color de fondo (puedes cambiarlo) */
     padding: 15px 40px; /* Espaciado interno: arriba/abajo e izquierda/derecha */
+
 }
 
 /* 3. Ajustes para la imagen del logo */
@@ -20,13 +25,14 @@
     display: flex; /* Coloca los enlaces en fila */
     gap: 30px; /* Espacio de separación entre cada enlace */
     list-style: none; /* Quita los puntos de la lista */
+
 }
 
 /* 5. Estilos de los enlaces (texto) */
 .navegacion ul li a {
     color: #2563eb; /* Color del texto */
     text-decoration: none; /* Quita el subrayado del link */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Impact;
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease; /* Efecto suave al pasar el mouse */
@@ -43,6 +49,73 @@ body {
 	margin: 0;
     color: #f8fafc;
 }
+
+.container1{
+    background-color: #3498db;
+    width: 100%;
+    display: flex;    
+}
+.container2{
+    background-color: #aca4da;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.container3{
+    background-color: #7e0437;
+}
+.container4{
+    background-color: #66015e;
+}
+.container5{
+    background-color: #000000;
+}
+.container6{
+    background-color: #2f41e2;
+}
+.container7{
+    background-color: #5eb6df;
+}
+
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.wrapper > div {
+  border-radius: 8px;
+  background-color: #e2e8f0;
+  padding: 1em;
+  color: #d9480f;
+  height: 200px
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.one {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+.two {
+  grid-column: 2 / 2;
+  grid-row: 1 / 2;
+}
+.three {
+  grid-column: 1;
+  grid-row: 2 / 2;
+}
+.four {
+  grid-column: 2;
+  grid-row: 2;
+}
+
 .contacto_div {
 	width: 108%;
 	height: 600px;
