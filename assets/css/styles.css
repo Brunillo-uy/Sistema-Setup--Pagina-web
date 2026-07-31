@@ -50,34 +50,6 @@ body {
     color: #f8fafc;
 }
 
-.container1{
-    background-color: #3498db;
-    width: 100%;
-    display: flex;    
-}
-.container2{
-    background-color: #aca4da;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-}
-.container3{
-    background-color: #7e0437;
-}
-.container4{
-    background-color: #66015e;
-}
-.container5{
-    background-color: #000000;
-}
-.container6{
-    background-color: #2f41e2;
-}
-.container7{
-    background-color: #5eb6df;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -99,21 +71,34 @@ body {
   grid-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
 }
-.one {
+.catalogo_one {
   grid-column: 1 / 2;
   grid-row: 1;
 }
-.two {
+.componentes-cat-img {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+.catalogo_two {
   grid-column: 2 / 2;
   grid-row: 1 / 2;
 }
-.three {
+.catalogo_three {
   grid-column: 1;
   grid-row: 2 / 2;
 }
-.four {
+.catalogo_four {
   grid-column: 2;
   grid-row: 2;
+}
+.catalogo_five {
+  grid-column: 1;
+  grid-row: 3;
+}
+.catalogo_six {
+  grid-column: 2;
+  grid-row: 3;
 }
 
 .contacto_div {
