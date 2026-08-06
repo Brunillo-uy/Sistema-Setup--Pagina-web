@@ -1,5 +1,8 @@
 * {
-    border: none
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .header-principal {
@@ -32,7 +35,6 @@
 .navegacion ul li a {
     color: #2563eb; /* Color del texto */
     text-decoration: none; /* Quita el subrayado del link */
-    font-family: Impact;
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease; /* Efecto suave al pasar el mouse */
@@ -40,7 +42,7 @@
 
 /* 6. Efecto Hover (al pasar el mouse por encima) */
 .navegacion ul li a:hover {
-    color: #3498db; /* Cambia el color del texto a azul */
+    color: #87cfff; /* Cambia el color del texto a azul */
 }
 
 body {
@@ -50,55 +52,79 @@ body {
     color: #f8fafc;
 }
 
-* {
-  box-sizing: border-box;
-}
-.wrapper {
-  max-width: 940px;
-  margin: 0 auto;
-}
+/* --- Banner Hero Catalogo --- */
+        .banner-hero {
+            background-color: #7cd0ff; /* El azul claro del banner */
+            text-align: center;
+            padding: 100px 0; /* Padding vertical para darle altura */
+        }
 
-.wrapper > div {
-  border-radius: 8px;
-  background-color: #e2e8f0;
-  padding: 1em;
-  color: #d9480f;
-  height: 200px
-}
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  grid-auto-rows: minmax(100px, auto);
-}
-.catalogo_one {
-  grid-column: 1 / 2;
-  grid-row: 1;
-}
-.componentes-cat-img {
-  width: 50%;
-  height: auto;
-  margin: 0 auto;
-}
-.catalogo_two {
-  grid-column: 2 / 2;
-  grid-row: 1 / 2;
-}
-.catalogo_three {
-  grid-column: 1;
-  grid-row: 2 / 2;
-}
-.catalogo_four {
-  grid-column: 2;
-  grid-row: 2;
-}
-.catalogo_five {
-  grid-column: 1;
-  grid-row: 3;
-}
-.catalogo_six {
-  grid-column: 2;
-  grid-row: 3;
+        .banner-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+
+
+/* --- Sección del Catálogo (Principal) --- */
+    .catalogo-section {
+        background-color: #13192e; /* El color marino oscuro de fondo */
+        padding: 60px 5%; /* Padding lateral y vertical */
+        min-height: 100vh; /* Para que ocupe todo el alto si hay pocos elementos */
+    }
+
+        /* Contenedor de la Cuadrícula (CSS Grid) */
+    .grid-catalogo {
+        display: grid;
+        /* Crea 3 columnas de igual ancho */
+        grid-template-columns: repeat(3, 1fr); 
+        /* Espacio entre los elementos de la cuadrícula */
+        gap: 30px; 
+        max-width: 1200px; /* Ancho máximo para que no se extienda infinitamente */
+        margin: 0 auto; /* Centra la cuadrícula */
+    }
+
+/* Estilo de los Elementos del Catálogo */
+    .elemento-catalogo {
+        background-color: #e2e8f0 ; /* El color verde claro de los elementos */
+        color: #0f172a;
+        padding: 35px 0;
+        text-align: center;
+        font-size: 40px;
+        border-radius: 8px; /* Bordes redondeados sutiles */
+    }
+
+        /* --- Responsividad Básica --- */
+        /* Para pantallas de menos de 900px, cambiar a 2 columnas */
+        @media (max-width: 900px) {
+            .grid-catalogo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .banner-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Para pantallas de menos de 600px, cambiar a 1 columna */
+        @media (max-width: 600px) {
+            .grid-catalogo {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            .banner-hero {
+                padding: 60px 0;
+            }
+        }
+
+.catalogo-img {
+    width: 60%;
+    height: auto;
+    padding: 2px 0;
 }
 
 .contacto_div {
@@ -113,7 +139,6 @@ body {
 	}
 .footeritem {
 	font-size: 16px;
-	font-family: Arial;
 	text-align: center;
 	padding-left: 15px;
 	padding-right: 15px;
