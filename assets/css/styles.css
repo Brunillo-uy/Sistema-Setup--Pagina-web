@@ -1,9 +1,15 @@
+@font-face {
+ font-family: 'Inter';
+ src: url('assets\fonts\Inter_24pt-Regular.ttf') format('truetype');
+}
+
 * {
     border: none;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 
 .header-principal {
     display: flex;
@@ -92,7 +98,9 @@ body {
         padding: 35px 0;
         text-align: center;
         font-size: 40px;
+        font-family: "Arial", sans-serif;
         border-radius: 8px; /* Bordes redondeados sutiles */
+        align-content: center;
     }
 
         /* --- Responsividad Básica --- */
@@ -122,11 +130,13 @@ body {
         }
 
 .catalogo-img {
-    width: 60%;
+    width: 50%;
     height: auto;
-    padding: 2px 0;
 }
+#div-escritorio-catalogo-img {
+    width: 65%;
 
+}
 .contacto_div {
 	width: 108%;
 	height: 600px;
