@@ -17,10 +17,10 @@
 <header class="header-principal">
         
         <!-- Contenedor del Logo -->
-        <div class="logo">
-            <a href="index.html">
+       <div class="logo">
+            <a href="inicio.html">
                 <!-- Reemplaza "mi-logo.jpg" con la ruta real de tu imagen -->
-                <img src="assets\img\logitaso_nav.png" alt="Logo de mi empresa" href="inicio.html">
+                <img src="assets\img\logitaso_nav.png" alt="Logo de mi empresa">
             </a>
         </div>
 
@@ -33,9 +33,10 @@
             </ul>
         </nav>
 </header>
-
+<!-- 
 <section style="text-align: center;">
-	<form action="">
+	<form action="" method="post">
+        
 <h2 style="font-size: 50px; text-align: center;">¡Contactanos!</h2>
 <fieldset style="border: none">
 	Nombres:<br>
@@ -55,10 +56,7 @@
 	Email:<br>
 	<input type="text" name="Email" style="color: black;">
 	<br>
-</fieldset>
-
-
-
+</fieldset>  
 
 <p>Titulo</p>
 <textarea name="mensaje" rows="10" cols="20">
@@ -71,9 +69,51 @@
 <br><br><input type="submit" value="Enviar" style="font-family: Arial, sans-serif;"><input type="reset"><br>
 
 </section>
+-->
+<div>
+    
+</div>
+<form id="loginForm">
+  <label>Nombres: <input type="text" name="username" /></label><br>
+  <label>Apellidos: <input type="text" name="username" /></label>
+  <br>
+  Email:
+  <input type="text" name="Email" style="color: black;">
+	<br>
+    Fecha de nacimiento
+    <input type="date" name="bday" min="1920-01-01"><br><br>
+	Genero:<br>
+	<input type="radio" name="Genero" value="Hombre" checked">Hombre<br>
+	<input type="radio" name="Genero" value="Mujer">Mujer<br>
+	<input type="radio" name="Genero" value="Otro">Otro
+	<br><br>
 
+    <p>Titulo</p>
+<textarea name="mensaje" rows="3" cols="20">
+</textarea><br><br>
 
- <!-- azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0   -->
+<p>Descripcion</p>
+<textarea name="mensaje" rows="10" cols="50">
+</textarea>
+</form>
+
+<!--- 
+<label>
+  Choose an option:
+  <select form="loginForm" name="options">
+    <option value="A">A</option>
+    <option value="B">B</option>
+  </select>
+</label>
+<label>Description:
+  <textarea form="loginForm" rows="4" name="description">
+Hello, World!</textarea>
+</label>
+<button form="loginForm" type="submit" name="submitLogin" value="Login">
+  Submit
+</button> -->
+ 
+<!-- azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0   -->
 
 <footer>
 	<table class="footertabla">
