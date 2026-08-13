@@ -139,15 +139,51 @@ body {
     width: 65%;
 
 }
-.footertabla {
+
+
+/*  Contactos  */
+
+.banner-contacto {
+    background-color: #7cd0ff; /* El azul claro del banner */
+    text-align: center;
+    padding: 180px 0; /* Padding vertical para darle altura */
+}
+
+.banner-contacto-font {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+
+
+.footertal {
 	background-color: #2563eb;
 	width: 100%;
 	border: none;
 	}
-.footeritem {
+.footeri {
 	font-size: 16px;
 	text-align: center;
 	padding-left: 15px;
 	padding-right: 15px;
 	height: auto;
 	}
+
+.footertabla {
+    display: flex; /* Coloca los enlaces en fila */
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px; /* Espacio de separación entre cada enlace */
+    list-style: none; /* Quita los puntos de la lista */
+    background-color: #2563eb;
+    padding: 10px;
+}
+
+/* 5. Estilos de los enlaces (texto) */
+.footeritem {
+    color:#f8fafc; /* Color del texto */
+    font-size: 16px;
+}
