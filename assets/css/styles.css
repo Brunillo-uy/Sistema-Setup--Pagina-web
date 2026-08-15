@@ -60,7 +60,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* --- Banner Hero Catalogo --- */
+/* --- Banners Hero  --- */
         .banner-hero {
             background-color: #7cd0ff; /* El azul claro del banner */
             text-align: center;
@@ -72,6 +72,17 @@ body {
             font-weight: bold;
             color: #000;
         }
+        .banner-contacto {
+            background-color: #ff00c8; /* El azul claro del banner */
+            text-align: center;
+            padding: 180px 0; /* Padding vertical para darle altura */
+        }
+
+        .banner-contacto-font {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #000;
+    }
 
 
 
@@ -143,34 +154,6 @@ body {
 
 /*  Contactos  */
 
-.banner-contacto {
-    background-color: #7cd0ff; /* El azul claro del banner */
-    text-align: center;
-    padding: 180px 0; /* Padding vertical para darle altura */
-}
-
-.banner-contacto-font {
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: #000;
-}
-
-
-
-
-
-.footertal {
-	background-color: #2563eb;
-	width: 100%;
-	border: none;
-	}
-.footeri {
-	font-size: 16px;
-	text-align: center;
-	padding-left: 15px;
-	padding-right: 15px;
-	height: auto;
-	}
 
 .footertabla {
     display: flex; /* Coloca los enlaces en fila */
