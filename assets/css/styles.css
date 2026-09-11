@@ -14,17 +14,17 @@
 
 .header-principal {
     display: flex;
-    justify-content: space-around; /* Separa el logo de los enlaces */
+    flex-direction: row;
+    justify-content: space-between; /* Separa el logo de los enlaces */
     align-items: center; /* Centra los elementos verticalmente */
-    background-color: #f8fafc; /* Color de fondo (puedes cambiarlo) */
     padding: 1rem 2rem; /* Espaciado interno: arriba/abajo e izquierda/derecha */
+    background-color: #f8fafc;
 }
 
 /* 3. Ajustes para la imagen del logo */
 .logo img {
-    height: 60px; /* Ajusta este alto según el tamaño de tu .jpg */
+    height: 3.75rem; /* Ajusta este alto según el tamaño de tu .jpg */
     width: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 4px; /* Opcional: redondea un poco las esquinas de tu jpg */
     display: flex;
 	align-items: flex-start; /* Evita pequeños márgenes extra debajo de la imagen */
 }
@@ -32,13 +32,13 @@
 /* 4. Estilos de la lista de navegación */
 .navegacion ul {
     display: flex; /* Coloca los enlaces en fila */
-    flex-wrap: 1 1 200px;
-    gap: 30px; /* Espacio de separación entre cada enlace */
+    flex-wrap: 1 1 12.5rem;
+    gap: 1rem; /* Espacio de separación entre cada enlace */
     list-style: none; /* Quita los puntos de la lista */
 }
 
 /* 5. Estilos de los enlaces (texto) */
-.navegacion ul li a {
+.navegacion li a {
     color: #2563eb; /* Color del texto */
     text-decoration: none; /* Quita el subrayado del link */
     font-size: 16px;
@@ -47,7 +47,7 @@
 }
 
 /* 6. Efecto Hover (al pasar el mouse por encima) */
-.navegacion ul li a:hover {
+.navegacion li a:hover {
     color: #87cfff; /* Cambia el color del texto a azul */
 }
 
@@ -57,71 +57,111 @@ body {
 	margin: 0;
     color: #f8fafc;
     font-family: 'Inter', sans-serif;
+    align-items: center;
+    align-content: center;
 }
 
 /* --- Banners Hero  --- */
-        .banner-hero {
-            background-color: #7cd0ff; /* El azul claro del banner */
-            text-align: center;
-            padding-top: 15%;
-            padding-bottom: 15%; 
-        }
+.banner-hero {
+    background-color: #7cd0ff; /* El azul claro del banner */
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 15%; 
+}
 
-        .banner-title {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #000;
-        }
-        .banner-contacto {
-            background-color: #ff00c8; /* El azul claro del banner */
-            text-align: center;
-            padding: 180px 0; /* Padding vertical para darle altura */
-        }
+.banner-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+}
 
-        .banner-contacto-font {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #000;
-    }
+.banner-contacto {
+    background-color: #ff00c8; /* El azul claro del banner */
+    text-align: center;
+    padding: 180px 0; /* Padding vertical para darle altura */
+}
+
+.banner-contacto-font {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+}
 
 
 
 /* --- Sección del Catálogo (Principal) --- */
-    .catalogo-section {
-        background-color: #13192e; /* El color marino oscuro de fondo */
-        padding: 60px 5%; /* Padding lateral y vertical */
-        min-height: 100vh; /* Para que ocupe todo el alto si hay pocos elementos */
-    }
+.catalogo-section {
+    background-color: #13192e; /* El color marino oscuro de fondo */
+    padding: 3.75rem 1rem; /* Padding lateral y vertical */
+    min-height: 100vh; /* Para que ocupe todo el alto si hay pocos elementos */
+}
 
         /* Contenedor de la Cuadrícula (CSS Grid) */
-    .grid-catalogo {
-        display: grid;
-        /* Crea 3 columnas de igual ancho */
-        grid-template-columns: repeat(3, 1fr); 
-        /* Espacio entre los elementos de la cuadrícula */
-        gap: 30px; 
-        max-width: 1200px; /* Ancho máximo para que no se extienda infinitamente */
-        margin: 0 auto; /* Centra la cuadrícula */
-    }
+.grid-catalogo {
+    display: grid;
+    /* Crea 3 columnas de igual ancho */
+    grid-template-columns: repeat(3, 1fr); 
+    /* Espacio entre los elementos de la cuadrícula */
+    gap: 1.8rem; 
+    max-width: 1200px; /* Ancho máximo para que no se extienda infinitamente */
+    margin: 0 auto; /* Centra la cuadrícula */
+}
 
 /* Estilo de los Elementos del Catálogo */
-    .elemento-catalogo {
-        background-color: #e2e8f0 ; /* El color verde claro de los elementos */
-        color: #0f172a;
-        padding: 35px 0;
-        text-align: center;
-        font-size: 40px;
-        font-family: "Arial", sans-serif;
-        border-radius: 8px; /* Bordes redondeados sutiles */
-        align-content: center;
-    }
+.elemento-catalogo {
+    background-color: #e2e8f0 ; /* El color verde claro de los elementos */
+    color: #0f172a;
+    padding: 35px 0;
+    text-align: center;
+    font-size: 40px;
+    font-family: "Arial", sans-serif;
+    border-radius: 8px; /* Bordes redondeados sutiles */
+    align-content: center;
+}
 
-        /* --- Responsividad Básica --- */
-        /* Para pantallas de menos de 900px, cambiar a 2 columnas */
-    @media (max-width: 768px) {
+.catalogo-img {
+    width: 50%;
+    height: auto;
+}
+#div-escritorio-catalogo-img {
+    width: 65%;
+}
+
+/*  Contactos  */
+.footer-background {
+    background-color: #2563eb;
+    width: 100%;
+}
+.footertabla {
+    display: flex; /* Coloca los enlaces en fila */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-around;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 1rem; /* Espacio de separación entre cada enlace */
+    list-style: none; /* Quita los puntos de la lista */
+    background-color: #2563eb;
+    padding: 1rem;
+    max-width: 1200px;
+}
+
+/* 5. Estilos de los enlaces (texto) */
+.footeritem {
+    width: auto;
+    height: auto;
+    align-self: center;
+    flex-shrink: 1;
+    color:#f8fafc; /* Color del texto */
+    font-size: 0.8rem;
+    font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 768px) {
         .grid-catalogo {
             grid-template-columns: repeat(2, 1fr);
-            margin: 0;
+            margin: 0 auto;
             width: auto;
         }
         .banner-title {
@@ -135,18 +175,25 @@ body {
         }
         .header-principal {
             display: flex;
-            justify-content: space-around; /* Separa el logo de los enlaces */
-            align-items: flex-end; /* Centra los elementos verticalmente */
+            justify-content: space-between; /* Separa el logo de los enlaces */
+            align-items: center; /* Centra los elementos verticalmente */
             background-color: #f8fafc; /* Color de fondo (puedes cambiarlo) */
             padding: 1rem 2rem; /* Espaciado interno: arriba/abajo e izquierda/derecha */
         }
-    }
-
+}
         /* Para pantallas de menos de 600px, cambiar a 1 columna */
-    @media (max-width: 320px) {
+@media (max-width: 320px) {
+        .navegacion ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 1rem 0;
+            text-align: center;
+        }
         .grid-catalogo {
             grid-template-columns: repeat(2, 1fr);
-            margin: 0;
+            margin: 0 auto;
             width: auto;
         }
         .banner-title {
@@ -158,37 +205,8 @@ body {
             padding-top: 20%;
             padding-bottom: 20%;
         }
-
-    }
-            
-
-.catalogo-img {
-    width: 50%;
-    height: auto;
-}
-#div-escritorio-catalogo-img {
-    width: 65%;
-
-}
-
-
-/*  Contactos  */
-
-
-.footertabla {
-    display: flex; /* Coloca los enlaces en fila */
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 15px; /* Espacio de separación entre cada enlace */
-    list-style: none; /* Quita los puntos de la lista */
-    background-color: #2563eb;
-    padding: 15px;
-    max-width: 1200px;
-}
-
-/* 5. Estilos de los enlaces (texto) */
-.footeritem {
-    color:#f8fafc; /* Color del texto */
-    font-size: 12px;
+        .footertabla {
+        flex-shrink: 0;
+        flex-wrap: wrap;
+        }
 }
