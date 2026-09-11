@@ -12,43 +12,65 @@
   font-style: normal;
 }
 
-.header-principal {
+.barra-navegacion  {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Separa el logo de los enlaces */
-    align-items: center; /* Centra los elementos verticalmente */
-    padding: 1rem 2rem; /* Espaciado interno: arriba/abajo e izquierda/derecha */
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
     background-color: #f8fafc;
+    text-decoration: none;
 }
 
-/* 3. Ajustes para la imagen del logo */
 .logo img {
-    height: 3.75rem; /* Ajusta este alto según el tamaño de tu .jpg */
-    width: auto; /* Mantiene la proporción de la imagen */
+    height: 3.75rem;
+    width: auto;
     display: flex;
-	align-items: flex-start; /* Evita pequeños márgenes extra debajo de la imagen */
+	align-items: flex-start;
 }
+.barra-navegacion-lista {
+    color: #2563eb;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    text-decoration: none;
 
-/* 4. Estilos de la lista de navegación */
-.navegacion ul {
-    display: flex; /* Coloca los enlaces en fila */
-    flex-wrap: 1 1 12.5rem;
-    gap: 1rem; /* Espacio de separación entre cada enlace */
-    list-style: none; /* Quita los puntos de la lista */
 }
-
-/* 5. Estilos de los enlaces (texto) */
-.navegacion li a {
-    color: #2563eb; /* Color del texto */
-    text-decoration: none; /* Quita el subrayado del link */
+.barra-navegacion-item {
+    color: #2563eb;
+    text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s ease; /* Efecto suave al pasar el mouse */
+    transition: color 0.3s ease;
 }
 
-/* 6. Efecto Hover (al pasar el mouse por encima) */
-.navegacion li a:hover {
-    color: #87cfff; /* Cambia el color del texto a azul */
+.barra-navegacion-itemlink {
+    color: #2563eb; 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.barra-navegacion-itemlink:hover{
+    color: #87cfff; 
+    text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburguer-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 2px;
 }
 
 body {
@@ -159,54 +181,62 @@ body {
 }
 
 @media (max-width: 768px) {
-        .grid-catalogo {
-            grid-template-columns: repeat(2, 1fr);
-            margin: 0 auto;
-            width: auto;
-        }
-        .banner-title {
-            font-size: 2.5rem;
-        }
-        .banner-hero {
-            background-color: #7cd0ff; /* El azul claro del banner */
-            text-align: center;
-            padding-top: 20%;
-            padding-bottom: 20%; 
-        }
-        .header-principal {
-            display: flex;
-            justify-content: space-between; /* Separa el logo de los enlaces */
-            align-items: center; /* Centra los elementos verticalmente */
-            background-color: #f8fafc; /* Color de fondo (puedes cambiarlo) */
-            padding: 1rem 2rem; /* Espaciado interno: arriba/abajo e izquierda/derecha */
-        }
+    .hamburger {
+    display: flex;
+    }
+
+   .barra-navegacion-lista {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    flex-direction: column;
+    background-color: #38bdf8;
+    text-align: center;
+    padding: 1rem 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    }
+    .barra-navegacion-lista.active {
+    left: 0;
+    top: 100%;
+    }
+    .barra-navegacion-item {
+    margin: 1rem 0;
+    }
+    .grid-catalogo {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        width: auto;
+    }
+    .banner-title {
+        font-size: 3.5rem;
+    }
+    .banner-hero {
+        background-color: #7cd0ff;
+        text-align: center;
+        padding-top: 15%;
+        padding-bottom: 15%; 
+    }
 }
-        /* Para pantallas de menos de 600px, cambiar a 1 columna */
+
 @media (max-width: 320px) {
-        .navegacion ul {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        .grid-catalogo {
-            grid-template-columns: repeat(2, 1fr);
-            margin: 0 auto;
-            width: auto;
-        }
-        .banner-title {
-            font-size: 2.5rem;
-        }
-        .banner-hero {
-            background-color: #7cd0ff; /* El azul claro del banner */
-            text-align: center;
-            padding-top: 20%;
-            padding-bottom: 20%;
-        }
-        .footertabla {
+    .grid-catalogo {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        width: auto;
+    }
+    .banner-title {
+        font-size: 3.5rem;
+    }
+    .banner-hero {
+        background-color: #7cd0ff; /* El azul claro del banner */
+        text-align: center;
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+    .footertabla {
         flex-shrink: 0;
         flex-wrap: wrap;
-        }
+    }
 }
