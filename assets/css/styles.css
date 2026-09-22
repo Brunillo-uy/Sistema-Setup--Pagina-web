@@ -11,7 +11,20 @@
   font-weight: 400;
   font-style: normal;
 }
+body {
+    background-color: #0f172a;
+    border: none;
+	margin: 0;
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+    align-content: center;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+}
 
+/* --- Barra de Navegación  --- */
 .barra-navegacion  {
     display: flex;
     flex-direction: row;
@@ -23,7 +36,7 @@
 }
 
 .logo img {
-    height: 3.75rem;
+    height: 6vh;
     width: auto;
     display: flex;
 	align-items: flex-start;
@@ -66,21 +79,12 @@
   flex-direction: column;
   gap: 5px;
 }
+
 .hamburguer-bar {
   width: 25px;
   height: 3px;
   background-color: #2563eb;
   border-radius: 2px;
-}
-
-body {
-    background-color: #0f172a;
-    border: none;
-	margin: 0;
-    color: #f8fafc;
-    font-family: 'Inter', sans-serif;
-    align-items: center;
-    align-content: center;
 }
 
 /* --- Banners Hero  --- */
@@ -95,61 +99,118 @@ body {
     font-size: 3.5rem;
     font-weight: bold;
     color: #000;
+    flex-shrink: 1;
 }
 
-.banner-contacto {
-    background-color: #ff00c8; /* El azul claro del banner */
+/* Pagina de formula de Contacto*/
+.contacto-seccion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #38bdf8;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+.contacto_imagen {
+    height: min(90dvh, 100%);
+    width: auto;
+    flex: 1 1 auto;
+    margin: 0 auto;
+}
+
+.contacto-columna-izquierda {
+    background-color: #38bdf8;
+    padding: 2rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #000;
+    }
+}
+.contacto-columna-derecha {
+    background-color: #0f172a;
+    flex: 1;
+    flex-shrink: 1;
+}
+
+.contactoForm {
     text-align: center;
-    padding: 180px 0; /* Padding vertical para darle altura */
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a;
 }
-
-.banner-contacto-font {
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: #000;
+textarea {
+  width: 100%;        /* Ocupa el 100% del ancho del contenedor */
+  max-width: 100%;    /* Evita que se salga del borde en celulares */
+  height: 100px;      /* Define una altura fija y razonable */
+  resize: vertical;   /* Evita que el usuario lo deforme hacia los lados */
 }
-
-
+.boton-formulario {
+    background-color: #2563eb;
+    color: #e2e8f0;
+    padding: 0.9rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.boton-formulario:hover {
+    background-color: #38bdf8;
+    color: #2563eb
+}
+/*azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0  */
 
 /* --- Sección del Catálogo (Principal) --- */
-.catalogo-section {
-    background-color: #13192e; /* El color marino oscuro de fondo */
-    padding: 3.75rem 1rem; /* Padding lateral y vertical */
-    min-height: 100vh; /* Para que ocupe todo el alto si hay pocos elementos */
+.main-catalogo-section {
+    background-color: #13192e;
+    padding: 1rem 1rem;
+    width: min(1200px, auto);
 }
 
-        /* Contenedor de la Cuadrícula (CSS Grid) */
-.grid-catalogo {
+/* Contenedor de la Cuadrícula (CSS Grid) */
+.catalogo-grid-div {
     display: grid;
     /* Crea 3 columnas de igual ancho */
     grid-template-columns: repeat(3, 1fr); 
     /* Espacio entre los elementos de la cuadrícula */
-    gap: 1.8rem; 
-    max-width: 1200px; /* Ancho máximo para que no se extienda infinitamente */
+    gap: 1.8rem;
+    width: min(1200px, 85%);
     margin: 0 auto; /* Centra la cuadrícula */
-}
-
-/* Estilo de los Elementos del Catálogo */
-.elemento-catalogo {
-    background-color: #e2e8f0 ; /* El color verde claro de los elementos */
-    color: #0f172a;
-    padding: 35px 0;
-    text-align: center;
-    font-size: 40px;
-    font-family: "Arial", sans-serif;
-    border-radius: 8px; /* Bordes redondeados sutiles */
     align-content: center;
 }
 
-.catalogo-img {
-    width: 50%;
-    height: auto;
-}
-#div-escritorio-catalogo-img {
-    width: 65%;
+/* Estilo de los Elementos del Catálogo */
+.catalogo-elemento {
+    background-color: #e2e8f0 ; /* El color verde claro de los elementos */
+    color: #0f172a;
+    padding: 1rem 1rem;
+    text-align: center;
+    border-radius: 8px; /* Bordes redondeados sutiles */
+    align-content: center;
+
+    img {
+        width: min(9rem, 80%);
+        height: auto;
+    }
+
+    h6 {
+        font-size: 1.5rem;
+    }
 }
 
-/*  Contactos  */
+#div-escritorio-catalogo-img {
+    width: min(9rem, 90%);
+}
+
+/*  Footer  */
 .footer-background {
     background-color: #2563eb;
     width: 100%;
@@ -176,7 +237,7 @@ body {
     align-self: center;
     flex-shrink: 1;
     color:#f8fafc; /* Color del texto */
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-family: "Inter", sans-serif;
 }
 
@@ -204,7 +265,7 @@ body {
     .barra-navegacion-item {
     margin: 1rem 0;
     }
-    .grid-catalogo {
+    .catalogo-grid-div {
         grid-template-columns: repeat(2, 1fr);
         margin: 0 auto;
         width: auto;
@@ -215,16 +276,52 @@ body {
     .banner-hero {
         background-color: #7cd0ff;
         text-align: center;
-        padding-top: 15%;
-        padding-bottom: 15%; 
+        padding-top: 30%;
+        padding-bottom: 30%; 
+    }
+    .contacto-seccion {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+    .contacto-columna-izquierda {
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        flex: 1;
+        flex-shrink: wrap;
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+    }
+    .contacto-columna-derecha {
+        width: 100%;
+        flex: 1;
+        flex-shrink: wrap;
+    }
+    .contacto_imagen {
+        width: 100%;
+    }
+
+    .footertabla {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footeritem {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.5rem;
     }
 }
 
 @media (max-width: 320px) {
-    .grid-catalogo {
+    .catalogo-grid-div {
         grid-template-columns: repeat(2, 1fr);
         margin: 0 auto;
-        width: auto;
     }
     .banner-title {
         font-size: 3.5rem;
@@ -232,11 +329,7 @@ body {
     .banner-hero {
         background-color: #7cd0ff; /* El azul claro del banner */
         text-align: center;
-        padding-top: 15%;
-        padding-bottom: 15%;
-    }
-    .footertabla {
-        flex-shrink: 0;
-        flex-wrap: wrap;
+        padding-top: 25%;
+        padding-bottom: 25%;
     }
 }

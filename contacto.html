@@ -31,119 +31,49 @@
     </nav>
 </header>
 
-<div class="banner-contacto">
-    <h1 class="banner-title">Contacto</h1>
-</div>
+<main class="contacto-seccion">
+    <section class="contacto-columna-izquierda">
+        <h1 class="banner-contacto-font">¡Contactanos!</h1>
+        <img src="assets\img\Contactanos.png" alt="Ilustración de contacto" class="contacto_imagen">
+    </section>
 
-<!-- 
-<section style="text-align: center;">
-	<form action="" method="post">
-        
-
-
+    <section class="contacto-columna-derecha">
+        <form class="contactoForm">
+            <label>Nombres: <input type="text" name="Nombre" required /></label><br><br>
+            <label>Apellidos: <input type="text" name="Apellido" required /></label>
+            <br><br>
+            <label>Email: <input type="text" name="Email" style="color: black;" required></label>
+            <br><br>
+            <label>Fecha de nacimiento: <input type="date" name="bday" min="1920-01-01" required></label><br><br>
     
-<h2 style="font-size: 50px; text-align: center;">¡Contactanos!</h2>
-<fieldset style="border: none">
-	Nombres:<br>
-	<input type="text" name="Nombre" style="color: black;">
-	<br>
-	Apellidos:<br>
-	<input type="text" name="Apellido" style="color: black;">
-	<br><br>
-<p>Edad</p>
-<p>Ingrese su fecha de nacimiento</p>
-<input type="date" name="bday" min="1920-01-01"><br><br>
-	Genero:<br>
-	<input type="radio" name="Genero" value="Hombre" checked">Hombre<br>
-	<input type="radio" name="Genero" value="Mujer">Mujer<br>
-	<input type="radio" name="Genero" value="Otro">Otro
-	<br><br>
-	Email:<br>
-	<input type="text" name="Email" style="color: black;">
-	<br>
-</fieldset>  
-	Genero:<br>
-	<input type="radio" name="Genero" value="Hombre" checked">Hombre<br>
-	<input type="radio" name="Genero" value="Mujer">Mujer<br>
-	<input type="radio" name="Genero" value="Otro">Otro
-	<br><br>
-<p>Titulo</p>
-<textarea name="mensaje" rows="10" cols="20">
-</textarea>
+            <p>Genero:</p>
+            <select name="Genero" id="Genero-seleccion">
+                <option value="otro" required>Otro</option>
+                <option value="hombre" required>Hombre</option>
+                <option value="mujer" required>Mujer</option>
+            </select><br><br>
+    
+            <p>Titulo</p>
+            <textarea name="mensaje" rows="3" cols="20" required>
+        </textarea><br><br>
+    
+            <p>Descripcion</p>
+            <textarea name="mensaje" rows="10" cols="50" required>
+        </textarea>
+    
+            <br><br>
+            <input type="submit" value="Enviar" class="boton-formulario">
+            <br><br>
+            <input type="reset" value="Reestablecer todo" class="boton-formulario">
+    
+        </form>
 
-<p>Descripcion</p>
-<textarea name="mensaje" rows="10" cols="50">
-</textarea>
+    </section>
 
-<br><br><input type="submit" value="Enviar" style="font-family: Arial, sans-serif;"><input type="reset"><br>
-
-</section>
--->
-
-<form id="contactoForm" style="text-align: center; padding-top: 50px;">
-  <label>Nombres: <input type="text" name="Nombre" required/></label><br><br>
-  <label>Apellidos: <input type="text" name="Apellido" required/></label>
-  <br><br>
-  Email:
-  <input type="text" name="Email" style="color: black;" required>
-	<br><br>
-  Fecha de nacimiento
-  <input type="date" name="bday" min="1920-01-01" required><br><br>
-
-<select name="Genero" id="Genero-seleccion">
-  <option value="" required>--Cual es tu genero?--</option>
-  <option value="dog" required>Hombre</option>
-  <option value="cat" required>Mujer</option>
-  <option value="hamster" required>Otro</option>
-</select><br><br>
-
-
-    <p>Titulo</p>
-<textarea name="mensaje" rows="3" cols="20" required>
-</textarea><br><br>
-
-<p>Descripcion</p>
-<textarea name="mensaje" rows="10" cols="50" required>
-</textarea>
-
-<br><br><input type="submit" value="Enviar" style="font-family: 'Inter', sans-serif;"> <br><br><input type="reset" style="font-family: 'Inter', sans-serif;">
-
-</form>
-
-<!--- 
-<label>
-  Choose an option:
-  <select form="loginForm" name="options">
-    <option value="A">A</option>
-    <option value="B">B</option>
-  </select>
-</label>
-<label>Description:
-  <textarea form="loginForm" rows="4" name="description">
-Hello, World!</textarea>
-</label>
-<button form="loginForm" type="submit" name="submitLogin" value="Login">
-  Submit
-</button> 
-
-<footer>
-	<table class="footertabl">
-  <tr>
-	<th class="footerite"><h4>Copyright @2026</h4></th>
-    <th class="footerite"><h4>silvabruno212000@gmail.com</h4></th>
-    <th class="footerite"><h4>(+598) 098654321</h4></th>
-    <th class="footerite"><h4>Facebook: @SistemaSetup</h4></th>
-    <th class="footerit"><h4>Instagram: @SistemaSetup</h4></th>
-  </tr>
-</table>
-
--->
- 
-
+</main>
 
 
 <!-- azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0   -->
-
 
 <footer class="footer-background">
     <ul class="footertabla">
