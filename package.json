@@ -1,0 +1,21 @@
+{
+  "name": "sistema-setup-pagina-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brunillo-uy/Sistema-Setup--Pagina-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Brunillo-uy/Sistema-Setup--Pagina-web/issues"
+  },
+  "homepage": "https://github.com/Brunillo-uy/Sistema-Setup--Pagina-web#readme"
+}

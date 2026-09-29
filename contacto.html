@@ -19,21 +19,26 @@
 
         <div class="logo">
             <a href="index.html">
-                <img src="assets\img\logitaso_nav.png" alt="Logo de mi empresa">
+                <img src="assets/img/logitaso_nav.png" alt="Logo de mi empresa">
             </a>
         </div>
 
-        <ul class="barra-navegacion-lista">
+        <ul class="barra-navegacion-lista" id="barra-navegacion-lista">
             <li class="barra-navegacion-item"><a href="catalogo.html" class="barra-navegacion-itemlink">Catálogo</a></li>
             <li class="barra-navegacion-item"><a href="contacto.html" class="barra-navegacion-itemlink">Contacto</a></li>
             <li class="barra-navegacion-item"><a href="mi_cuenta.html" class="barra-navegacion-itemlink">Mi cuenta</a></li>
-        </ul>  
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span class="hamburguer-bar"></span>
+            <span class="hamburguer-bar"></span>
+            <span class="hamburguer-bar"></span>
+        </button>
     </nav>
 </header>
 
 <main class="contacto-seccion">
     <section class="contacto-columna-izquierda">
-        <h1 class="banner-contacto-font">¡Contactanos!</h1>
+        <h1>¡Contactanos!</h1>
         <img src="assets\img\Contactanos.png" alt="Ilustración de contacto" class="contacto_imagen">
     </section>
 
@@ -54,18 +59,18 @@
             </select><br><br>
     
             <p>Titulo</p>
-            <textarea name="mensaje" rows="3" cols="20" required>
-        </textarea><br><br>
+            <input type="text" name="titulo" required id="titulo-input"><br><br>
+    
     
             <p>Descripcion</p>
             <textarea name="mensaje" rows="10" cols="50" required>
-        </textarea>
+            </textarea>
     
             <br><br>
             <input type="submit" value="Enviar" class="boton-formulario">
             <br><br>
             <input type="reset" value="Reestablecer todo" class="boton-formulario">
-    
+
         </form>
 
     </section>
