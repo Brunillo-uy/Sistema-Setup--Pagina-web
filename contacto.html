@@ -41,15 +41,14 @@
         <h1>¡Contactanos!</h1>
         <img src="assets\img\Contactanos.png" alt="Ilustración de contacto" class="contacto_imagen">
     </section>
-
     <section class="contacto-columna-derecha">
         <form class="contactoForm">
-            <label>Nombres: <input type="text" name="Nombre" required /></label><br><br>
-            <label>Apellidos: <input type="text" name="Apellido" required /></label>
+            <label>Nombres: <input type="text" name="Nombre" required id="nombre-input"></label><br><br>
+            <label>Apellidos: <input type="text" name="Apellido" required id="apellido-input"></label>
             <br><br>
-            <label>Email: <input type="text" name="Email" style="color: black;" required></label>
+            <label>Email: <input type="text" name="Email" required id="email-input"></label>
             <br><br>
-            <label>Fecha de nacimiento: <input type="date" name="bday" min="1920-01-01" required></label><br><br>
+            <label>Fecha de nacimiento: <input type="date" name="bday" min="1920-01-01" required id="bday-input"></label><br><br>
     
             <p>Genero:</p>
             <select name="Genero" id="Genero-seleccion">
@@ -62,19 +61,18 @@
             <input type="text" name="titulo" required id="titulo-input"><br><br>
     
     
-            <p>Descripcion</p>
-            <textarea name="mensaje" rows="10" cols="50" required>
+            <p>Dejanos aqui tu mensaje</p>
+            <textarea name="mensaje" rows="10" cols="50" required id="mensaje-input">
             </textarea>
     
             <br><br>
-            <input type="submit" value="Enviar" class="boton-formulario">
+            <input type="submit" value="Enviar" class="boton-formulario" id="enviar-formulario-btn">
             <br><br>
-            <input type="reset" value="Reestablecer todo" class="boton-formulario">
+            <input type="reset" value="Reestablecer todo" class="boton-formulario" id="reset-formulario-btn">
 
         </form>
 
     </section>
-
 </main>
 
 

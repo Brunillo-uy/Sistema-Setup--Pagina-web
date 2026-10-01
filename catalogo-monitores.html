@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de monitores</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="barra-navegacion" id="nav-menu">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/logitaso_nav.png" alt="Logo de mi empresa">
+            </a>
+        </div>
+
+        <ul class="barra-navegacion-lista" id="barra-navegacion-lista">
+            <li class="barra-navegacion-item"><a href="catalogo.html" class="barra-navegacion-itemlink">Catálogo</a></li>
+            <li class="barra-navegacion-item"><a href="contacto.html" class="barra-navegacion-itemlink">Contacto</a></li>
+            <li class="barra-navegacion-item"><a href="mi_cuenta.html" class="barra-navegacion-itemlink">Mi cuenta</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span class="hamburguer-bar"></span>
+            <span class="hamburguer-bar"></span>
+            <span class="hamburguer-bar"></span>
+        </button>
+    </nav>
+</header>
+
+<div class="banner-hero">
+    <h1 class="banner-title">Mi cuenta</h1>
+</div>
+<main class="catalogo-container">
+    <!-- Rutas de navegación (Breadcrumbs) y Título -->
+    <div class="catalogo-encabezado">
+        <p class="breadcrumbs">Inicio / Monitores</p>
+        <h1>Monitores</h1>
+    </div>
+
+    <!-- Layout de 2 columnas -->
+    <div class="catalogo-layout">
+
+        <!-- COLUMNA IZQUIERDA: Filtros y Categorías -->
+        <aside class="sidebar-filtros">
+            <div class="filtro-grupo">
+                <h3>Categoría</h3>
+                <ul class="filtro-lista">
+                    <li><a href="#">22"</a></li>
+                    <li><a href="#">24"</a></li>
+                    <li><a href="#">27"</a></li>
+                    <li><a href="#">32"</a></li>
+                    <li><a href="#">34"</a></li>
+                    <li><a href="#">43"</a></li>
+                </ul>
+            </div>
+
+            <div class="filtro-grupo">
+                <h3>Marcas</h3>
+                <label class="filtro-checkbox"><input type="checkbox"> Acer</label>
+                <label class="filtro-checkbox"><input type="checkbox"> Asus</label>
+                <label class="filtro-checkbox"><input type="checkbox"> Gigabyte</label>
+                <label class="filtro-checkbox"><input type="checkbox"> LG</label>
+                <label class="filtro-checkbox"><input type="checkbox"> MSI</label>
+                <label class="filtro-checkbox"><input type="checkbox"> Samsung</label>
+            </div>
+        </aside>
+
+        <!-- COLUMNA DERECHA: Productos y Barra superior -->
+        <section class="productos-seccion">
+
+            <!-- Barra superior con contador y orden de productos -->
+            <div class="productos-toolbar">
+                <span class="cantidad-articulos">6 articulos</span>
+                <div class="ordenar-por">
+                    <label for="orden">Ordenar por:</label>
+                    <select id="orden">
+                        <option value="relevancia">Relevancia</option>
+                        <option value="menor-precio">Menor precio</option>
+                        <option value="mayor-precio">Mayor precio</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grilla de Tarjetas de Productos -->
+            <div class="productos-grid">
+
+                <!-- Producto 1 -->
+                <article class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/img/monitor1.jpg" alt="Monitor Asus 27">
+                    </div>
+                    <h4 class="producto-titulo">Monitor Asus 27" ROG Fast IPS 4K/UHD</h4>
+                    <p class="producto-precio">USD 563</p>
+                </article>
+
+                <!-- Producto 2 -->
+                <article class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/img/monitor2.jpg" alt="Monitor Samsung Odyssey">
+                    </div>
+                    <h4 class="producto-titulo">Monitor Samsung Odyssey Ark 55" Curvo 4K</h4>
+                    <p class="producto-precio">USD 2,736</p>
+                </article>
+
+                <!-- Producto 3 -->
+                <article class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/img/monitor3.jpg" alt="Monitor Xiaomi G27i">
+                    </div>
+                    <h4 class="producto-titulo">Monitor Xiaomi G27i 2023 27" FHD 165Hz</h4>
+                    <p class="producto-precio">USD 151</p>
+                </article>
+
+                <!-- Producto 4 -->
+                <article class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/img/monitor4.jpg" alt="Monitor Samsung Viewfinity">
+                    </div>
+                    <h4 class="producto-titulo">Monitor Plano Samsung Viewfinity S7 27" 4K</h4>
+                    <p class="producto-precio">USD 448</p>
+                </article>
+
+            </div>
+        </section>
+
+    </div>
+</main>
+ <!-- azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0   -->
+
+<footer class="footer-background">
+    <ul class="footertabla">
+        <li class="footeritem"><h4>Copyright @2026</h4></li>
+        <li class="footeritem"><h4>silvabruno212000@gmail.com</h4></li>
+        <li class="footeritem"><h4>(+598) 098654321</h4></li>
+        <li class="footeritem"><h4>Facebook: @SistemaSetup</h4></li>
+        <li class="footeritem"><h4>Instagram: @SistemaSetup</h4></li>
+    </ul>
+</footer>
+<script src="assets/js/script.js"></script>
+</body>
+
+</html> 

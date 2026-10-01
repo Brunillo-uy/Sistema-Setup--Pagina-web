@@ -218,6 +218,188 @@ textarea {
 #div-escritorio-catalogo-img {
     width: min(14rem, 100%);
 }
+/* Nuevo catalogo */
+/* --- ESTILOS DEL CATÁLOGO DE PRODUCTOS --- */
+
+.catalogo-container {
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 2rem 5%;
+    min-height: 80vh;
+}
+
+.catalogo-encabezado {
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.3rem;
+}
+
+.catalogo-encabezado h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+/* Estructura principal en 2 columnas */
+.catalogo-layout {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* --- Sidebar Izquierdo (Filtros) --- */
+.sidebar-filtros {
+    width: 220px;
+    flex-shrink: 0;
+}
+
+.filtro-grupo {
+    margin-bottom: 2rem;
+}
+
+.filtro-grupo h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.4rem;
+}
+
+.filtro-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.filtro-lista li {
+    margin-bottom: 0.4rem;
+}
+
+.filtro-lista a {
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.filtro-lista a:hover {
+    color: #2563eb;
+}
+
+.filtro-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #334155;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+}
+
+/* --- Columna Derecha (Productos) --- */
+.productos-seccion {
+    flex: 1;
+}
+
+/* Toolbar superior */
+.productos-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.ordenar-por select {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #0f172a;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* Grilla de productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjeta individual de producto */
+.producto-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.producto-imagen {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.producto-imagen img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.producto-titulo {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.producto-precio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #dc2626; /* Color rojo para destacar el precio */
+}
+
+/* --- Ajuste Responsive para Pantallas Pequeñas --- */
+@media (max-width: 768px) {
+    .catalogo-layout {
+        flex-direction: column; /* Apila el sidebar sobre los productos */
+    }
+
+    .sidebar-filtros {
+        width: 100%;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en celulares */
+    }
+}
+
+@media (max-width: 480px) {
+    .productos-grid {
+        grid-template-columns: 1fr; /* 1 columna en celulares muy pequeños */
+    }
+}
+
 
 /*  Footer  */
 .footer-background {
