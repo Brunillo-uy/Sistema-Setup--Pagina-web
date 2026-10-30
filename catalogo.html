@@ -13,26 +13,217 @@
 </head>
 <body>
 
-<header>
-    <nav class="barra-navegacion" id="nav-menu">
-
+<header class="navbar" id="nav-menu">
+    <div class="navbar-top">
         <div class="logo">
             <a href="index.html">
-                <img src="assets/img/logitaso_nav.png" alt="Logo de mi empresa">
+                <img src="assets/img/logitaso_nav.png" alt="Logo de Sistema Setup">
             </a>
         </div>
 
-        <ul class="barra-navegacion-lista" id="barra-navegacion-lista">
-            <li class="barra-navegacion-item"><a href="catalogo.html" class="barra-navegacion-itemlink">Catálogo</a></li>
-            <li class="barra-navegacion-item"><a href="contacto.html" class="barra-navegacion-itemlink">Contacto</a></li>
-            <li class="barra-navegacion-item"><a href="mi_cuenta.html" class="barra-navegacion-itemlink">Mi cuenta</a></li>
+        <div class="contenedor-buscador">
+            <form class="formulario-buscador" action="#" method="GET">
+                <input type="text" placeholder="Buscar..." class="entrada-buscador">
+                <button type="submit" aria-label="Buscar" class="boton-buscador">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div class="iconos-usuario">
+            <a href="mi_cuenta.html" class="icono-encabezado">
+                <img src="assets/img/iniciar sesion.png" alt="Boton para Iniciar sesión" class="icono-imagen">
+            </a>
+            <a href="carrito.html" class="icono-encabezado">
+                <img src="assets/img/carrito.png" alt="Boton para carrito" class="icono-imagen">
+            </a>
+        </div>
+
+        <div class="controles-movil">
+            <button class="boton-buscador-movil" type="button" aria-label="Abrir buscador" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <button class="boton-hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false">
+                <span class="barra-hamburguesa"></span>
+                <span class="barra-hamburguesa"></span>
+                <span class="barra-hamburguesa"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="contenedor-buscador-movil" id="contenedor-buscador-movil">
+        <form class="formulario-buscador-movil" action="#" method="GET">
+            <input type="text" placeholder="Buscar..." class="entrada-buscador-movil">
+            <button type="submit" class="boton-enviar-buscador-movil">Buscar</button>
+        </form>
+    </div>
+
+    <nav class="menu-movil" id="menu-movil" aria-label="Menú móvil">
+        <ul class="lista-menu-movil">
+            <li class="item-menu-movil item-menu-movil-con-submenu">
+                <button class="boton-principal-menu-movil" type="button" aria-expanded="false">
+                    Catalogo
+                </button>
+
+                <ul class="submenu-movil">
+                    <li class="item-submenu-movil">
+                        <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                            Componentes
+                        </button>
+
+                        <ul class="submenu-interno-movil">
+                            <li><a href="catalogo.html">+Ver todo</a></li>
+
+                            <li class="item-submenu-movil">
+                                <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                                    Procesadores
+                                </button>
+                                <ul class="submenu-interno-movil">
+                                    <li><a href="catalogo.html">+Ver todo</a></li>
+                                    <li><a href="catalogo.html">AMD</a></li>
+                                    <li><a href="catalogo.html">NVIDIA</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="catalogo.html">Memoria RAM</a></li>
+                            <li><a href="catalogo.html">Motherboards</a></li>
+
+                            <li class="item-submenu-movil">
+                                <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                                    Almacenamiento
+                                </button>
+                                <ul class="submenu-interno-movil">
+                                    <li><a href="catalogo.html">+Ver todo</a></li>
+                                    <li><a href="catalogo.html">SSD</a></li>
+                                    <li><a href="catalogo.html">HDD</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="catalogo-monitores.html" class="enlace-menu-movil">Monitores</a></li>
+
+                    <li class="item-submenu-movil">
+                        <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                            Perifericos
+                        </button>
+                        <ul class="submenu-interno-movil">
+                            <li><a href="catalogo.html">+Ver todo</a></li>
+                            <li><a href="catalogo.html">Teclados</a></li>
+                            <li><a href="catalogo.html">Mouse</a></li>
+                            <li><a href="catalogo.html">Auriculares</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="item-submenu-movil">
+                        <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                            Accesorios
+                        </button>
+                        <ul class="submenu-interno-movil">
+                            <li><a href="catalogo.html">+Ver todo</a></li>
+                            <li><a href="catalogo.html">Cables</a></li>
+                            <li><a href="catalogo.html">Soportes</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="catalogo.html" class="enlace-menu-movil">Escritorios</a></li>
+                    <li><a href="catalogo.html" class="enlace-menu-movil">Sillas</a></li>
+                </ul>
+            </li>
+
+            <li class="item-menu-movil">
+                <a href="carrito.html" class="enlace-menu-movil">Mi carrito</a>
+            </li>
+
+            <li class="item-menu-movil">
+                <a href="mi_cuenta.html" class="enlace-menu-movil">Iniciar sesión</a>
+            </li>
+
+            <li class="item-menu-movil">
+                <a href="contacto.html" class="enlace-menu-movil">Contacto</a>
+            </li>
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-            <span class="hamburguer-bar"></span>
-            <span class="hamburguer-bar"></span>
-            <span class="hamburguer-bar"></span>
-        </button>
     </nav>
+    <div class="navbar-bottom">
+        <div class="header-container-catalogo">
+            <div class="catalogo-activador">
+                <span class="catalogo-icono-menu" aria-hidden="true">&#9776;</span>
+                <span class="catalogo-titulo-menu">Catalogo</span>
+            </div>
+            <div class="catalogo-desplegable">
+                <ul class="catalogo-menu-columna">
+                    <li class="catalogo-item-con-submenu">
+                        <a href="catalogo.html" class="catalogo-link-menu">Componentes</a>
+                        <div class="catalogo-panel-submenu">
+                            <ul class="catalogo-menu-columna">
+                                <li><a href="catalogo.html" class="catalogo-link-menu">+Ver todo</a></li>
+                                <li class="catalogo-item-con-submenu">
+                                    <a href="catalogo.html" class="catalogo-link-menu">Procesadores</a>
+                                    <div class="catalogo-panel-submenu">
+                                        <ul class="catalogo-menu-columna">
+                                            <li><a href="catalogo.html" class="catalogo-link-menu">+Ver todo</a></li>
+                                            <li><a href="catalogo.html" class="catalogo-link-menu">AMD</a></li>
+                                            <li><a href="catalogo.html" class="catalogo-link-menu">NVIDIA</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="catalogo.html" class="catalogo-link-menu">Memoria RAM</a></li>
+                                <li><a href="catalogo.html" class="catalogo-link-menu">Motherboards</a></li>
+                                <li class="catalogo-item-con-submenu">
+                                    <a href="catalogo.html" class="catalogo-link-menu">Almacenamiento</a>
+                                    <div class="catalogo-panel-submenu">
+                                        <ul class="catalogo-menu-columna">
+                                            <li><a href="catalogo.html" class="catalogo-link-menu">+Ver todo</a></li>
+                                            <li><a href="catalogo.html" class="catalogo-link-menu">SSD</a></li>
+                                            <li><a href="catalogo.html" class="catalogo-link-menu">HDD</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="catalogo-monitores.html" class="catalogo-link-menu">Monitores</a></li>
+                    <li class="catalogo-item-con-submenu">
+                        <a href="catalogo.html" class="catalogo-link-menu">Perifericos</a>
+                        <div class="catalogo-panel-submenu">
+                            <ul class="catalogo-menu-columna">
+                                <li><a href="catalogo.html" class="catalogo-link-menu">+Ver todo</a></li>
+                                <li><a href="catalogo.html" class="catalogo-link-menu">Teclados</a></li>
+                                <li><a href="catalogo.html" class="catalogo-link-menu">Mouse</a></li>
+                                <li><a href="catalogo.html" class="catalogo-link-menu">Auriculares</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="catalogo-item-con-submenu">
+                        <a href="catalogo.html" class="catalogo-link-menu">Accesorios</a>
+                        <div class="catalogo-panel-submenu">
+                            <ul class="catalogo-menu-columna">
+                                <li><a href="catalogo.html" class="catalogo-link-menu">+Ver todo</a></li>
+                                <li><a href="catalogo.html" class="catalogo-link-menu">Cables</a></li>
+                                <li><a href="catalogo.html" class="catalogo-link-menu">Soportes</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="catalogo.html" class="catalogo-link-menu">Escritorios</a>
+                    </li>
+                    <li><a href="catalogo.html" class="catalogo-link-menu">Sillas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-contacto-container">
+            <a href="contacto.html" class="contacto-header-link">Contacto</a>
+        </div>
+    </div>
 </header>
 
 <div class="banner-hero">

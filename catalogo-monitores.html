@@ -18,29 +18,139 @@
                 <img src="assets/img/logitaso_nav.png" alt="Logo de Sistema Setup">
             </a>
         </div>
-        <div class="container-buscador">
-            <form class="buscador-form" action="#" method="GET">
-            <input type="text" placeholder="Buscar..." class="buscador-input">
-            <button type="submit" aria-label="Buscar" class="buscador-btn">
+
+        <div class="contenedor-buscador">
+            <form class="formulario-buscador" action="#" method="GET">
+                <input type="text" placeholder="Buscar..." class="entrada-buscador">
+                <button type="submit" aria-label="Buscar" class="boton-buscador">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div class="iconos-usuario">
+            <a href="mi_cuenta.html" class="icono-encabezado">
+                <img src="assets/img/iniciar sesion.png" alt="Boton para Iniciar sesión" class="icono-imagen">
+            </a>
+            <a href="carrito.html" class="icono-encabezado">
+                <img src="assets/img/carrito.png" alt="Boton para carrito" class="icono-imagen">
+            </a>
+        </div>
+
+        <div class="controles-movil">
+            <button class="boton-buscador-movil" type="button" aria-label="Abrir buscador" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
             </button>
-        </form>
-        </div>
-        <div class="iniciar-sesion">
-            <a href="mi_cuenta.html" class="header_icono">
-                <img src="assets\img\iniciar sesion.png" alt="Boton para Iniciar sesión" class="icono-img">
-            </a>
-        </div>
-        <div class="mi_carrito">
-            <a href="carrito.html" class="header_icono">
-                <img src="assets\img\carrito.png" alt="Boton para carrito" class="icono-img">
-            </a>
+
+            <button class="boton-hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false">
+                <span class="barra-hamburguesa"></span>
+                <span class="barra-hamburguesa"></span>
+                <span class="barra-hamburguesa"></span>
+            </button>
         </div>
     </div>
+
+    <div class="contenedor-buscador-movil" id="contenedor-buscador-movil">
+        <form class="formulario-buscador-movil" action="#" method="GET">
+            <input type="text" placeholder="Buscar..." class="entrada-buscador-movil">
+            <button type="submit" class="boton-enviar-buscador-movil">Buscar</button>
+        </form>
+    </div>
+
+    <nav class="menu-movil" id="menu-movil" aria-label="Menú móvil">
+        <ul class="lista-menu-movil">
+            <li class="item-menu-movil item-menu-movil-con-submenu">
+                <button class="boton-principal-menu-movil" type="button" aria-expanded="false">
+                    Catalogo
+                </button>
+
+                <ul class="submenu-movil">
+                    <li class="item-submenu-movil">
+                        <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                            Componentes
+                        </button>
+
+                        <ul class="submenu-interno-movil">
+                            <li><a href="catalogo.html">+Ver todo</a></li>
+
+                            <li class="item-submenu-movil">
+                                <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                                    Procesadores
+                                </button>
+                                <ul class="submenu-interno-movil">
+                                    <li><a href="catalogo.html">+Ver todo</a></li>
+                                    <li><a href="catalogo.html">AMD</a></li>
+                                    <li><a href="catalogo.html">NVIDIA</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="catalogo.html">Memoria RAM</a></li>
+                            <li><a href="catalogo.html">Motherboards</a></li>
+
+                            <li class="item-submenu-movil">
+                                <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                                    Almacenamiento
+                                </button>
+                                <ul class="submenu-interno-movil">
+                                    <li><a href="catalogo.html">+Ver todo</a></li>
+                                    <li><a href="catalogo.html">SSD</a></li>
+                                    <li><a href="catalogo.html">HDD</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="catalogo-monitores.html" class="enlace-menu-movil">Monitores</a></li>
+
+                    <li class="item-submenu-movil">
+                        <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                            Perifericos
+                        </button>
+                        <ul class="submenu-interno-movil">
+                            <li><a href="catalogo.html">+Ver todo</a></li>
+                            <li><a href="catalogo.html">Teclados</a></li>
+                            <li><a href="catalogo.html">Mouse</a></li>
+                            <li><a href="catalogo.html">Auriculares</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="item-submenu-movil">
+                        <button class="boton-submenu-movil" type="button" aria-expanded="false">
+                            Accesorios
+                        </button>
+                        <ul class="submenu-interno-movil">
+                            <li><a href="catalogo.html">+Ver todo</a></li>
+                            <li><a href="catalogo.html">Cables</a></li>
+                            <li><a href="catalogo.html">Soportes</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="catalogo.html" class="enlace-menu-movil">Escritorios</a></li>
+                    <li><a href="catalogo.html" class="enlace-menu-movil">Sillas</a></li>
+                </ul>
+            </li>
+
+            <li class="item-menu-movil">
+                <a href="carrito.html" class="enlace-menu-movil">Mi carrito</a>
+            </li>
+
+            <li class="item-menu-movil">
+                <a href="mi_cuenta.html" class="enlace-menu-movil">Iniciar sesión</a>
+            </li>
+
+            <li class="item-menu-movil">
+                <a href="contacto.html" class="enlace-menu-movil">Contacto</a>
+            </li>
+        </ul>
+    </nav>
     <div class="navbar-bottom">
         <div class="header-container-catalogo">
             <div class="catalogo-activador">
@@ -117,101 +227,7 @@
 <div class="banner-hero">
     <h1 class="banner-title">Monitores</h1>
 </div>
-<main class="catalogo-container">
-    <!-- Rutas de navegación (Breadcrumbs) y Título -->
-    <div class="catalogo-encabezado">
-        <p class="breadcrumbs">Inicio / Monitores</p>
-        <h1>Monitores</h1>
-    </div>
 
-    <!-- Layout de 2 columnas -->
-    <div class="catalogo-layout">
-
-        <!-- COLUMNA IZQUIERDA: Filtros y Categorías -->
-        <aside class="sidebar-filtros">
-            <div class="filtro-grupo">
-                <h3>Categoría</h3>
-                <ul class="filtro-lista">
-                    <li><a href="#">22"</a></li>
-                    <li><a href="#">24"</a></li>
-                    <li><a href="#">27"</a></li>
-                    <li><a href="#">32"</a></li>
-                    <li><a href="#">34"</a></li>
-                    <li><a href="#">43"</a></li>
-                </ul>
-            </div>
-
-            <div class="filtro-grupo">
-                <h3>Marcas</h3>
-                <label class="filtro-checkbox"><input type="checkbox"> Acer</label>
-                <label class="filtro-checkbox"><input type="checkbox"> Asus</label>
-                <label class="filtro-checkbox"><input type="checkbox"> Gigabyte</label>
-                <label class="filtro-checkbox"><input type="checkbox"> LG</label>
-                <label class="filtro-checkbox"><input type="checkbox"> MSI</label>
-                <label class="filtro-checkbox"><input type="checkbox"> Samsung</label>
-            </div>
-        </aside>
-
-        <!-- COLUMNA DERECHA: Productos y Barra superior -->
-        <section class="productos-seccion">
-
-            <!-- Barra superior con contador y orden de productos -->
-            <div class="productos-toolbar">
-                <span class="cantidad-articulos">6 articulos</span>
-                <div class="ordenar-por">
-                    <label for="orden">Ordenar por:</label>
-                    <select id="orden">
-                        <option value="relevancia">Relevancia</option>
-                        <option value="menor-precio">Menor precio</option>
-                        <option value="mayor-precio">Mayor precio</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Grilla de Tarjetas de Productos -->
-            <div class="productos-grid">
-
-                <!-- Producto 1 -->
-                <article class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/img/monitor1.jpg" alt="Monitor Asus 27">
-                    </div>
-                    <h4 class="producto-titulo">Monitor Asus 27" ROG Fast IPS 4K/UHD</h4>
-                    <p class="producto-precio">USD 563</p>
-                </article>
-
-                <!-- Producto 2 -->
-                <article class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/img/monitor2.jpg" alt="Monitor Samsung Odyssey">
-                    </div>
-                    <h4 class="producto-titulo">Monitor Samsung Odyssey Ark 55" Curvo 4K</h4>
-                    <p class="producto-precio">USD 2,736</p>
-                </article>
-
-                <!-- Producto 3 -->
-                <article class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/img/monitor3.jpg" alt="Monitor Xiaomi G27i">
-                    </div>
-                    <h4 class="producto-titulo">Monitor Xiaomi G27i 2023 27" FHD 165Hz</h4>
-                    <p class="producto-precio">USD 151</p>
-                </article>
-
-                <!-- Producto 4 -->
-                <article class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/img/monitor4.jpg" alt="Monitor Samsung Viewfinity">
-                    </div>
-                    <h4 class="producto-titulo">Monitor Plano Samsung Viewfinity S7 27" 4K</h4>
-                    <p class="producto-precio">USD 448</p>
-                </article>
-
-            </div>
-        </section>
-
-    </div>
-</main>
  <!-- azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0   -->
 
 <footer class="footer-background">
