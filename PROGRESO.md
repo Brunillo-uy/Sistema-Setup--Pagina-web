@@ -22,12 +22,12 @@
 - [x] 🧑‍💻 Convertir `Sistema_Setup/` en `frontend/` y comprobar que arranca con `npm install` y `npm run dev`.
 - [x] 🤖 Limpiar plantilla, copiar CSS, imágenes y fuentes, adaptar `index.html`, crear `.env` / `.env.example`, dejar `App.jsx` con un `<h1>`.
 - [x] 🧑‍💻 Comprobar en `localhost:5173` que se ve el `<h1>` con mis estilos.
-- [ ] 🧑‍💻 Commit: `chore: crear frontend con Vite + React`.
+- [x] 🧑‍💻 Commit: `chore: crear frontend con Vite + React`.
 
 ## Fase 3 — Componentes (HTML → JSX)
 
-- [ ] 🤖 Ejemplo guiado: convertir `Footer` (HTML original vs JSX lado a lado).
-- [ ] 🧑‍💻 Mis primeros componentes (Sesión 16): `Header.jsx` y `Hero.jsx`, e importarlos en `App.jsx`.
+- [x] 🤖 Ejemplo guiado: convertir `Footer` (HTML original vs JSX lado a lado).
+- [x] 🧑‍💻 Mis primeros componentes (Sesión 16): `Header.jsx` y `Hero.jsx`, e importarlos en `App.jsx`.
 - [ ] 🤖 Convertir la sección larga de texto fijo ("Garantías" del inicio).
 - [ ] 🤖 Crear `frontend/src/data/categorias.js` con las 6 categorías del catálogo.
 - [ ] 🧑‍💻 Componente reutilizable `CategoriaCard.jsx` con props + lista con `.map()` y `key`.
