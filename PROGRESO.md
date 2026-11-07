@@ -14,14 +14,14 @@
 
 - [x] 🤖 Crear rama `migracion-react`, mover servidor a `backend/` con `git mv`, ajustar scripts, quitar `express.static` y rutas HTML, crear `backend/.env.example`.
 - [x] 🧑‍💻 Configurar CORS para `http://localhost:5173` e instalar `cors`.
-- [ ] 🧑‍💻 Probar la API con `npm run dev` (GET `/api/salud`, GET `/api/contacto`, POST `/api/contacto`).
-- [ ] 🧑‍💻 Commit: `refactor: mover API a carpeta backend`.
+- [x] 🧑‍💻 Probar la API con `npm run dev` (GET `/api/salud`, GET `/api/contacto`, POST `/api/contacto`).
+- [x] 🧑‍💻 Commit: `refactor: mover API a carpeta backend`.
 
 ## Fase 2 — Proyecto React con Vite
 
-- [ ] 🧑‍💻 Convertir `Sistema_Setup/` en `frontend/` y comprobar que arranca con `npm install` y `npm run dev`.
-- [ ] 🤖 Limpiar plantilla, copiar CSS, imágenes y fuentes, adaptar `index.html`, crear `.env` / `.env.example`, dejar `App.jsx` con un `<h1>`.
-- [ ] 🧑‍💻 Comprobar en `localhost:5173` que se ve el `<h1>` con mis estilos.
+- [x] 🧑‍💻 Convertir `Sistema_Setup/` en `frontend/` y comprobar que arranca con `npm install` y `npm run dev`.
+- [x] 🤖 Limpiar plantilla, copiar CSS, imágenes y fuentes, adaptar `index.html`, crear `.env` / `.env.example`, dejar `App.jsx` con un `<h1>`.
+- [x] 🧑‍💻 Comprobar en `localhost:5173` que se ve el `<h1>` con mis estilos.
 - [ ] 🧑‍💻 Commit: `chore: crear frontend con Vite + React`.
 
 ## Fase 3 — Componentes (HTML → JSX)
