@@ -406,7 +406,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1rem;
-    border: 0.5px solid #0f172a;
+    border: 1px solid #8d8d8d;
     border-radius: 8px;
     background-color: #e2e8f0;
     color: #0f172a;
@@ -459,6 +459,7 @@ a {
     background-color: #e2e8f0;
     color: #0f172a;
     text-decoration: none;
+    border: 1px solid #8d8d8d;
     border-left: 5px solid #38bdf8;
     border-radius: 0 8px 8px 0;
 }
