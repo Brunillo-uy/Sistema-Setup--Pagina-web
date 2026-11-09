@@ -590,7 +590,7 @@ textarea {
 /*azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0  */
 
 /* --- Sección del Catálogo (Principal) --- */
-.main-catalogo-section {
+.catalogo-seccion {
     background-color: #13192e;
     padding: 1rem 1rem;
     width: min(1200px, auto);
@@ -609,7 +609,7 @@ textarea {
 }
 
 /* Estilo de los Elementos del Catálogo */
-.catalogo-elemento {
+.categoria-elemento {
     background-color: #e2e8f0 ; /* El color verde claro de los elementos */
     color: #0f172a;
     padding: 1rem 1rem;
@@ -627,7 +627,7 @@ textarea {
     }
 }
 
-#div-escritorio-catalogo-img {
+.catalogo-escritorio-img {
     width: min(14rem, 100%);
 }
 /* Nuevo catalogo */

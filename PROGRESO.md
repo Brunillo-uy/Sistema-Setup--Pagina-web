@@ -28,18 +28,17 @@
 
 - [x] 🤖 Ejemplo guiado: convertir `Footer` (HTML original vs JSX lado a lado).
 - [x] 🧑‍💻 Mis primeros componentes (Sesión 16): `Header.jsx` y `Hero.jsx`, e importarlos en `App.jsx`.
-- [ ] 🤖 Convertir la sección larga de texto fijo ("Garantías" del inicio).
-- [ ] 🤖 Crear `frontend/src/data/categorias.js` con las 6 categorías del catálogo.
-- [ ] 🧑‍💻 Componente reutilizable `CategoriaCard.jsx` con props + lista con `.map()` y `key`.
-- [ ] 🧑‍💻 Convertir el formulario de contacto a JSX (sin lógica todavía).
-- [ ] 🤖/🧑‍💻 Armar la navegación entre páginas según la decisión que tomemos.
+- [x] 🤖 Convertir la sección larga de texto fijo ("Garantías" del inicio).
+- [x] 🤖 Crear `frontend/src/data/categorias.js` con las 6 categorías del catálogo.
+- [x] 🧑‍💻 Componente reutilizable `CategoriaCard.jsx` con props + lista con `.map()` y `key`.
+- [x] 🧑‍💻 Convertir el formulario de contacto a JSX (sin lógica todavía).
 - [ ] 🧑‍💻 Commit: `feat: componentes de la página en React`.
 
 ## Fase 4 — Interactividad con useState
 
 - [ ] 🧑‍💻 Primer estado: menú hamburguesa (abrir/cerrar).
 - [ ] 🧑‍💻 Segundo estado: buscador móvil y submenús desplegables (mismo patrón).
-- [ ] 🧑‍💻 Subir el estado al padre y pasarlo por props (según la decisión de navegación).
+- [ ] 🧑‍💻 Subir el estado a `App` y pasarlo por props: navegación SPA entre Inicio, Catálogo, Monitores y Contacto.
 - [ ] 🧑‍💻 Formulario controlado: `value` + `onChange` y validación.
 - [ ] 🤖 Resto de interactividad del mismo tipo, siguiendo mi patrón.
 - [ ] 🧑‍💻 Commit: `feat: interactividad con useState`.

@@ -1,0 +1,35 @@
+function Garantias() {
+  return (
+    <h4>
+      [Todo esto h4 es un lorem ipsum] Las garantías cubren únicamente defectos de fabricación, excluyendo el uso inadecuado,
+      manipulación incorrecta, daños físicos y deterioro causado por factores externos como
+      humedad o picos de tensión.
+      Los equipos y productos en garantía vigente, solamente deben ser revisados por el equipo técnico autorizado de OBSIDIAN. De no respetar este punto la garantía puede perder su validez.
+      Las tarjetas de video utilizadas para minería quedan excluidas de la garantía debido a su
+      uso prolongado a máxima potencia.
+      El producto debe entregarse en condiciones higiénicas óptimas. La empresa se reserva
+      el derecho de rechazar productos que no cumplan con este criterio.
+      Los plazos para el cumplimiento de una garantía están detallados en el «certificado de
+      garantía».
+      Una vez que el cliente sea notificado sobre la resolución, dispondrá de 30 días corridos
+      para retirar su producto o utilizar la nota de crédito correspondiente. Pasado este plazo,
+      la empresa no se hará responsable del producto ni de la gestión.
+      El cliente tiene 7 días hábiles a partir de la compra para cambiar un producto, siempre y
+      cuando esté sin uso y con el sello de fábrica intacto.
+      Es responsabilidad del cliente verificar que el producto recibido sea el correcto. En caso
+      de error en la entrega, consulte el punto 6.
+      Si el cliente no está satisfecho con su compra, puede optar por cambiar el producto,
+      siempre y cuando esté sellado de fábrica. No se realizarán devoluciones de dinero bajo
+      ninguna circunstancia.
+      El plazo máximo para almacenar mercadería pagada es de 1 mes. Pasado este tiempo, se
+      cobrará un depósito diario de 2USD.
+      Las garantías por píxeles quemados o fallos en monitores estarán sujetas a las políticas
+      de garantía de cada marca.
+      La empresa no cubre el costo de envío de productos enviados para garantía.
+      Si se solicita una garantía y se determina que el producto funciona correctamente, se
+      cobrará una revisión de US$ 15.
+    </h4>
+  )
+}
+
+export default Garantias
