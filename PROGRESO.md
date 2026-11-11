@@ -42,15 +42,15 @@
 - [x] 🧑‍💻 Subir el estado a `App` y pasarlo por props: navegación SPA entre Inicio, Catálogo, Monitores y Contacto.
 - [x] 🧑‍💻 Formulario controlado: `value` + `onChange` y validación.
 - [x] 🤖 Resto de interactividad: no aplica (el desplegable del catálogo de escritorio funciona solo con CSS).
-- [ ] 🧑‍💻 Commit: `feat: interactividad con useState`.
+- [x] 🧑‍💻 Commit: `feat: interactividad con useState`.
 
 ## Fase 5 — Conectar con la API
 
-- [ ] 🤖 Crear `frontend/src/api.js` con `VITE_API_URL` y una función de ejemplo comentada.
-- [ ] 🧑‍💻 Traer datos con `useEffect` + estados `cargando` / `error` (adaptado a mis endpoints reales).
-- [ ] 🧑‍💻 Enviar el formulario con POST desde `api.js`.
-- [ ] 🤖 Funciones restantes de la API siguiendo mi patrón.
-- [ ] 🧑‍💻 Probar todo con el backend y MongoDB encendidos.
+- [x] 🤖 Crear `frontend/src/api.js` con `VITE_API_URL` y una función de ejemplo comentada.
+- [x] 🧑‍💻 Traer datos con `useEffect` + estados `cargando` / `error` (adaptado a mis endpoints reales).
+- [x] 🧑‍💻 Enviar el formulario con POST desde `api.js`.
+- [x] 🤖 Funciones restantes de la API siguiendo mi patrón.
+- [x] 🧑‍💻 Probar todo con el backend y MongoDB encendidos.
 - [ ] 🧑‍💻 Commit: `feat: frontend conectado a la API`.
 
 ## Fase 6 — Cierre
@@ -59,3 +59,10 @@
 - [ ] 🤖 `CAMBIOS.md` con la tabla "antes (vanilla) → ahora (React)".
 - [ ] 🧑‍💻 Escribir en `CAMBIOS.md` la sección "Lo que aprendí".
 - [ ] 🧑‍💻 Commit: `docs: README y resumen de la migración`.
+
+## Despliegue
+
+- [x] 🤖 Backend sirve `frontend/dist` y la API en el mismo puerto.
+- [x] 🤖 `.env.production` con `VITE_API_URL=/api`.
+- [x] 🤖 CORS con orígenes de desarrollo + `FRONTEND_URL`.
+- [ ] 🧑‍💻 Probar `npm run build` + `npm start` y desplegar según `DESPLIEGUE.md`.

@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { enviarContacto } from '../api.js'
+
 const formularioInicial = {
   nombre: '',
   apellido: '',
@@ -11,18 +13,36 @@ const formularioInicial = {
 
 function ContactoForm() {
   const [formulario, setFormulario] = useState(formularioInicial)
+  const [enviando, setEnviando] = useState(false)
+  const [resultado, setResultado] = useState(null)
+
   const manejarCambio = (evento) => {
-    const {name, value } = evento.target
-    setFormulario({...formulario, [name]: value,
-    })
+    const { name, value } = evento.target
+    setFormulario({ ...formulario, [name]: value })
   }
-  const manejarEnvio = (evento) => {
+
+  const manejarEnvio = async (evento) => {
     evento.preventDefault()
+    setEnviando(true)
+    setResultado(null)
+
+    try {
+      const respuesta = await enviarContacto(formulario)
+      setResultado({ tipo: 'ok', texto: respuesta.mensaje })
+      setFormulario(formularioInicial)
+    } catch (err) {
+      setResultado({ tipo: 'error', texto: err.message })
+    } finally {
+      setEnviando(false)
+    }
   }
+
   const reestablecer = () => {
     setFormulario(formularioInicial)
+    setResultado(null)
   }
- return (
+
+  return (
     <form className="contactoForm" onSubmit={manejarEnvio} onReset={reestablecer}>
       <label>Nombres: <input type="text" name="nombre" required id="nombre-input" value={formulario.nombre} onChange={manejarCambio} /></label><br /><br />
 
@@ -48,7 +68,20 @@ function ContactoForm() {
       <textarea name="mensaje" rows="10" cols="50" required id="mensaje-input" value={formulario.mensaje} onChange={manejarCambio}></textarea>
 
       <br /><br />
-      <input type="submit" value="Enviar" className="boton-formulario" id="enviar-formulario-btn" />
+
+      {resultado && (
+        <p style={{ color: resultado.tipo === 'ok' ? 'green' : 'red' }}>
+          {resultado.texto}
+        </p>
+      )}
+
+      <input
+        type="submit"
+        value={enviando ? 'Enviando...' : 'Enviar'}
+        disabled={enviando}
+        className="boton-formulario"
+        id="enviar-formulario-btn"
+      />
       <br /><br />
       <input type="reset" value="Reestablecer todo" className="boton-formulario" id="reset-formulario-btn" />
     </form>
