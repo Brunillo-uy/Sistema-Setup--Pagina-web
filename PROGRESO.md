@@ -32,15 +32,16 @@
 - [x] 🤖 Crear `frontend/src/data/categorias.js` con las 6 categorías del catálogo.
 - [x] 🧑‍💻 Componente reutilizable `CategoriaCard.jsx` con props + lista con `.map()` y `key`.
 - [x] 🧑‍💻 Convertir el formulario de contacto a JSX (sin lógica todavía).
-- [ ] 🧑‍💻 Commit: `feat: componentes de la página en React`.
+- [x] 🧑‍💻 Commit: `feat: componentes de la página en React`.
 
 ## Fase 4 — Interactividad con useState
 
-- [ ] 🧑‍💻 Primer estado: menú hamburguesa (abrir/cerrar).
-- [ ] 🧑‍💻 Segundo estado: buscador móvil y submenús desplegables (mismo patrón).
-- [ ] 🧑‍💻 Subir el estado a `App` y pasarlo por props: navegación SPA entre Inicio, Catálogo, Monitores y Contacto.
-- [ ] 🧑‍💻 Formulario controlado: `value` + `onChange` y validación.
-- [ ] 🤖 Resto de interactividad del mismo tipo, siguiendo mi patrón.
+- [x] 🧑‍💻 Primer estado: menú hamburguesa (abrir/cerrar).
+- [x] 🧑‍💻 Segundo estado: buscador móvil (mismo patrón).
+- [x] 🧑‍💻 Tercer estado: submenús desplegables del menú móvil (varios a la vez).
+- [x] 🧑‍💻 Subir el estado a `App` y pasarlo por props: navegación SPA entre Inicio, Catálogo, Monitores y Contacto.
+- [x] 🧑‍💻 Formulario controlado: `value` + `onChange` y validación.
+- [x] 🤖 Resto de interactividad: no aplica (el desplegable del catálogo de escritorio funciona solo con CSS).
 - [ ] 🧑‍💻 Commit: `feat: interactividad con useState`.
 
 ## Fase 5 — Conectar con la API
