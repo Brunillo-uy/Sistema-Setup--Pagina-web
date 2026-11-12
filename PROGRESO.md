@@ -55,8 +55,8 @@
 
 ## Fase 6 — Cierre
 
-- [ ] 🤖 `.gitignore` en la raíz, `README.md` y lista de archivos vanilla sin usar.
-- [ ] 🤖 `CAMBIOS.md` con la tabla "antes (vanilla) → ahora (React)".
+- [x] 🤖 `.gitignore` en la raíz, `README.md` y lista de archivos vanilla sin usar.
+- [x] 🤖 `CAMBIOS.md` con la tabla "antes (vanilla) → ahora (React)".
 - [ ] 🧑‍💻 Escribir en `CAMBIOS.md` la sección "Lo que aprendí".
 - [ ] 🧑‍💻 Commit: `docs: README y resumen de la migración`.
 
