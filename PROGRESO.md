@@ -6,6 +6,7 @@
 ## Decisiones tomadas (Fase 0)
 
 - [x] Navegación: SPA con la página activa en el estado de `App` (sin React Router).
+- [x] 🤖 Actualización: navegación migrada a React Router (`/`, `/catalogo`, `/monitores`, `/contacto`, `/producto/:id`).
 - [x] `Sistema_Setup/`: se reutiliza como `frontend/` (no se crea otro proyecto).
 - [x] MongoDB: se deja Atlas como está; no se toca la conexión ni los datos.
 - [x] `mi_cuenta.html` y `carrito.html`: se quitan sus enlaces.
@@ -57,7 +58,7 @@
 
 - [x] 🤖 `.gitignore` en la raíz, `README.md` y lista de archivos vanilla sin usar.
 - [x] 🤖 `CAMBIOS.md` con la tabla "antes (vanilla) → ahora (React)".
-- [ ] 🧑‍💻 Escribir en `CAMBIOS.md` la sección "Lo que aprendí".
+- [x] 🧑‍💻 Escribir en `CAMBIOS.md` la sección "Lo que aprendí".
 - [ ] 🧑‍💻 Commit: `docs: README y resumen de la migración`.
 
 ## Despliegue
@@ -66,3 +67,15 @@
 - [x] 🤖 `.env.production` con `VITE_API_URL=/api`.
 - [x] 🤖 CORS con orígenes de desarrollo + `FRONTEND_URL`.
 - [ ] 🧑‍💻 Probar `npm run build` + `npm start` y desplegar según `DESPLIEGUE.md`.
+
+## Catálogo de productos
+
+- [x] 🤖 Modelo `Producto` y rutas `GET /api/productos`, `/api/productos/filtros` y `/api/productos/:id`.
+- [x] 🤖 Lista de productos en `backend/lista_productos` (`npm run lista_productos`), sin cambiar el ID de los productos existentes.
+- [x] 🤖 Catálogo con sidebar, marcas, rango de precio, orden y grilla de tarjetas.
+- [x] 🤖 Filtro "Todos" y nombres legibles para cada categoría.
+- [x] 🤖 Subcategorías AMD/NVIDIA en el header mediante el campo `chipset`.
+- [x] 🤖 Placeholder para imágenes faltantes y carpeta `public/img/productos`.
+- [x] 🤖 Página de detalle `/producto/:id` con descripción libre, lista de características, selector de cantidad y compra simulada.
+- [ ] 🧑‍💻 Agregar las fotos reales de los procesadores.
+- [ ] 🧑‍💻 Probar el catálogo y hacer el commit.

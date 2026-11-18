@@ -2,6 +2,21 @@
 // Si no hay variable definida, usa /api (mismo servidor en producción).
 const API_URL = import.meta.env.VITE_API_URL || '/api'
 
+// Clave donde se guarda el token de sesión en el navegador.
+const TOKEN_KEY = 'sistema_setup_token'
+
+export function guardarToken(token) {
+  localStorage.setItem(TOKEN_KEY, token)
+}
+
+export function leerToken() {
+  return localStorage.getItem(TOKEN_KEY)
+}
+
+export function borrarToken() {
+  localStorage.removeItem(TOKEN_KEY)
+}
+
 // GET /api/contacto -> devuelve la lista de mensajes guardados.
 export async function obtenerContactos() {
   const respuesta = await fetch(`${API_URL}/contacto`)
@@ -28,4 +43,113 @@ export async function enviarContacto(datos) {
   }
 
   return resultado
+}
+
+// Convierte un objeto de filtros en query string (?categoria=...&marcas=...).
+function construirQuery(filtros = {}) {
+  const params = new URLSearchParams()
+
+  if (filtros.categoria) params.set('categoria', filtros.categoria)
+  if (filtros.marcas?.length) params.set('marcas', filtros.marcas.join(','))
+  if (filtros.chipset) params.set('chipset', filtros.chipset)
+  if (filtros.precioMin !== '' && filtros.precioMin != null) {
+    params.set('precioMin', filtros.precioMin)
+  }
+  if (filtros.precioMax !== '' && filtros.precioMax != null) {
+    params.set('precioMax', filtros.precioMax)
+  }
+  if (filtros.buscar) params.set('buscar', filtros.buscar)
+  if (filtros.orden) params.set('orden', filtros.orden)
+
+  const query = params.toString()
+  return query ? `?${query}` : ''
+}
+
+// GET /api/productos -> lista de productos con filtros opcionales.
+export async function obtenerProductos(filtros = {}) {
+  const respuesta = await fetch(`${API_URL}/productos${construirQuery(filtros)}`)
+
+  if (!respuesta.ok) {
+    throw new Error(`Error ${respuesta.status} al obtener los productos`)
+  }
+
+  return respuesta.json()
+}
+
+// GET /api/productos/filtros -> categorías, marcas y rango de precios.
+export async function obtenerFiltrosProductos() {
+  const respuesta = await fetch(`${API_URL}/productos/filtros`)
+
+  if (!respuesta.ok) {
+    throw new Error(`Error ${respuesta.status} al obtener los filtros`)
+  }
+
+  return respuesta.json()
+}
+
+// GET /api/productos/:id -> detalle de un producto puntual.
+export async function obtenerProducto(id) {
+  const respuesta = await fetch(`${API_URL}/productos/${id}`)
+  const resultado = await respuesta.json()
+
+  if (!respuesta.ok) {
+    throw new Error(resultado.mensaje || `Error ${respuesta.status} al obtener el producto`)
+  }
+
+  return resultado.producto
+}
+
+// POST /api/auth/registro -> crea una cuenta.
+export async function registrarUsuario(datos) {
+  const respuesta = await fetch(`${API_URL}/auth/registro`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(datos),
+  })
+
+  const resultado = await respuesta.json()
+
+  if (!respuesta.ok) {
+    throw new Error(resultado.mensaje || 'No se pudo crear la cuenta')
+  }
+
+  return resultado
+}
+
+// POST /api/auth/login -> inicia sesión con email y contraseña.
+export async function iniciarSesionUsuario(datos) {
+  const respuesta = await fetch(`${API_URL}/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(datos),
+  })
+
+  const resultado = await respuesta.json()
+
+  if (!respuesta.ok) {
+    throw new Error(resultado.mensaje || 'No se pudo iniciar sesión')
+  }
+
+  return resultado
+}
+
+// GET /api/auth/perfil -> recupera el usuario dueño del token guardado.
+export async function obtenerPerfil() {
+  const token = leerToken()
+
+  if (!token) {
+    throw new Error('No hay una sesión guardada')
+  }
+
+  const respuesta = await fetch(`${API_URL}/auth/perfil`, {
+    headers: { Authorization: `Bearer ${token}` },
+  })
+
+  const resultado = await respuesta.json()
+
+  if (!respuesta.ok) {
+    throw new Error(resultado.mensaje || 'La sesión no es válida')
+  }
+
+  return resultado.usuario
 }

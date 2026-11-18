@@ -5,6 +5,8 @@ const path = require('path');
 const fs = require('fs');
 const conectarDB = require('./config/db');
 const contactoRoutes = require('./routes/contacto');
+const productosRoutes = require('./routes/productos');
+const authRoutes = require('./routes/auth');
 const cors = require('cors');
 
 const app = express();
@@ -13,7 +15,9 @@ const PORT = process.env.PORT || 3000;
 // Orígenes autorizados para usar la API desde el navegador.
 const origenesPermitidos = [
     'http://localhost:5173',
+    'http://127.0.0.1:5173',
     'http://localhost:4173',
+    'http://127.0.0.1:4173',
     process.env.FRONTEND_URL,
 ].filter(Boolean);
 
@@ -50,6 +54,8 @@ app.use((req, res, next) => {
 
 // Rutas de la API
 app.use('/api/contacto', contactoRoutes);
+app.use('/api/productos', productosRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/api/salud', (req, res) => {
     res.json({ ok: true, mensaje: 'Servidor funcionando correctamente' });

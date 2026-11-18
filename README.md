@@ -28,6 +28,14 @@ Copia `backend/.env.example` a `backend/.env` y completa:
 MONGO_URL=tu_cadena_de_conexion
 MONGO_DB=sistema_setup
 PORT=3000
+JWT_SECRET=una_clave_larga_y_aleatoria
+JWT_EXPIRA=7d
+```
+
+Genera una clave segura para `JWT_SECRET` con:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
 ```
 
 Arranca:
@@ -44,6 +52,33 @@ npm start      # modo normal
 | GET | `/api/salud` | Comprueba que el servidor responde |
 | GET | `/api/contacto` | Lista los últimos mensajes |
 | POST | `/api/contacto` | Guarda un mensaje del formulario |
+| GET | `/api/productos` | Lista productos; acepta `categoria`, `marcas`, `chipset`, `precioMin`, `precioMax`, `buscar` y `orden` |
+| GET | `/api/productos/filtros` | Categorías, marcas y rango de precios para el catálogo |
+| GET | `/api/productos/:id` | Detalle de un producto puntual |
+| POST | `/api/auth/registro` | Crea una cuenta con `nombre`, `email` y `password` |
+| POST | `/api/auth/login` | Inicia sesión con `email` y `password` |
+| GET | `/api/auth/perfil` | Devuelve el usuario dueño del token (`Authorization: Bearer ...`) |
+| POST | `/api/auth/logout` | Cierra la sesión del lado del cliente |
+
+### Autenticación
+
+- Los usuarios se guardan en la colección `usuarios` de MongoDB.
+- Las contraseñas se hashean con `bcryptjs`; nunca se guardan ni se devuelven en texto plano.
+- El login devuelve un token JWT firmado con `JWT_SECRET`, válido por `JWT_EXPIRA` (7 días por defecto).
+- El frontend guarda el token en `localStorage` y lo envía en la cabecera `Authorization` al pedir el perfil.
+- El header muestra el nombre del usuario y enlaza a `/cuenta` cuando hay sesión activa.
+- Si falta `JWT_SECRET`, el registro y el login responden con error. Reinicia el backend después de cambiar `.env`.
+
+### Cargar los productos de ejemplo
+
+```bash
+cd backend
+npm run lista_productos
+```
+
+Esto crea o actualiza los productos de ejemplo sin cambiar el ID de los que ya existen. Los productos que ya no están en la lista se eliminan.
+
+> Este comando solo carga la base de datos. Para ver la página, inicia el backend (`npm start` o `npm run dev` en `backend`) y el frontend (`npm run dev` en `frontend`), o compila el frontend y usa el servidor de producción.
 
 ## Frontend
 
@@ -55,6 +90,8 @@ npm run dev
 
 Abre `http://localhost:5173`.
 
+Rutas principales: `/`, `/catalogo`, `/producto/:id`, `/carrito`, `/monitores`, `/contacto`, `/login`, `/registro` y `/cuenta`.
+
 Para apuntar a otra API, crea `frontend/.env`:
 
 ```
@@ -62,6 +99,35 @@ VITE_API_URL=http://localhost:3000/api
 ```
 
 En producción, `.env.production` ya usa `/api` (mismo servidor).
+
+### Catálogo en móvil
+
+- En pantallas pequeñas, el aside de filtros se muestra reducido para no ocupar toda la pantalla.
+- El botón **Mostrar filtros** despliega categorías, marcas y precio; **Ocultar filtros** vuelve a la vista compacta.
+- En escritorio los filtros siguen visibles todo el tiempo.
+
+### Buscador
+
+- La barra de búsqueda del header funciona en escritorio y en el menú móvil.
+- Al enviar un término, redirige a `/catalogo?buscar=...` y muestra los productos cuyo nombre, marca o descripción coincidan.
+- La búsqueda no distingue mayúsculas de minúsculas y también acepta coincidencias parciales del nombre.
+
+### Carrito de compras
+
+- Cualquier visitante puede agregar productos al carrito sin iniciar sesión.
+- El icono del carrito del header muestra un contador rojo con el total de unidades agregadas.
+- La página `/carrito` permite cambiar cantidades, quitar productos, vaciar el carrito y ver el total.
+- Para finalizar la compra hay que iniciar sesión o crear una cuenta. El carrito se conserva y, al volver, la persona regresa directamente a `/carrito`.
+- El carrito se guarda en `localStorage`, por lo que se mantiene al recargar o cerrar el navegador.
+- El botón **Finalizar compra** es simulado: muestra el total y no procesa ningún pago real.
+
+### Imágenes de productos
+
+Coloca las fotos en `frontend/public/img/productos/` con los nombres que indica `LEEME.txt`. Mientras falten, se muestra `placeholder.svg`.
+
+Si usas el servidor de producción en el puerto `3000`, ejecuta `npm run build --prefix frontend` después de agregar o cambiar imágenes. En desarrollo (`npm run dev`), Vite las toma directamente desde `public`.
+
+Los productos y sus rutas de imagen se cargan con `npm run lista_productos` desde `backend/lista_productos/productos.js`. Para usar otro formato (`.jpg`, `.png`), actualiza el campo `imagen` de cada producto en ese archivo.
 
 ## Producción
 
@@ -81,6 +147,7 @@ Abre `http://localhost:3000`. Instrucciones completas en [DESPLIEGUE.md](DESPLIE
 - React 19 + Vite
 - Node.js + Express 5
 - MongoDB Atlas + Mongoose
+- Autenticación con JWT + bcryptjs
 - CSS propio (sin frameworks)
 
 ## Versión anterior

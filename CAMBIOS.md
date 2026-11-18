@@ -19,14 +19,9 @@ Resumen de cómo era el proyecto antes (HTML/CSS/JS vanilla) y cómo es ahora (R
 | Configuración repartida entre archivos | `.env` para secretos y `.env.production` para el build |
 
 ## Lo que aprendí
-<!-- TODO: escribe esta sección con tus palabras. Entre 3 y 5 ideas. -->
-- TODO: ¿Qué es un componente y por qué me ayuda a reutilizar código?
-Componentes son funciones que devuelven JSX. Me permiten reutilizar código y encapsular logica en un solo lugar.
-- TODO: ¿Para qué sirve `useState` y cómo lo usé en el menú y el formulario?
-useState me permite guardar y actualizar el estado de un componente. Lo useé en el menú y el formulario para controlar su estado y re-renderizarlos.
-- TODO: ¿Qué hace `useEffect` y dónde lo usé?
-useEffect me permite ejecutar código después de que el componente se renderice. Lo useé en el formulario para enviar los datos al servidor y mostrar mensajes de éxito o error.
-- TODO: ¿Qué diferencia hay entre props y estado?
-Props son datos que se pasan a un componente desde el padre. El estado es datos que se guardan en el componente y pueden ser actualizados con `useState`.
-- TODO: ¿Qué fue lo más difícil de la migración y cómo lo resolví?
-El más difícil fue la migración de la API a React. Lo resolví utilizando `axios` para hacer las llamadas a la API y `useState` para manejar el estado de la respuesta.
+
+- Los componentes son funciones que devuelven JSX. Me permiten reutilizar código y encapsular la lógica en un solo lugar.
+- `useState` me permite guardar y actualizar el estado de un componente. Lo usé en el menú y en el formulario para controlar sus valores y volver a renderizar.
+- `useEffect` me permite ejecutar código después de que el componente se renderiza. Lo usé en la página de Contacto para pedir la lista de mensajes al abrirla.
+- Las props son datos que se pasan a un componente desde el padre. El estado son datos que guarda el componente y que pueden cambiar con `useState`.
+- Lo más difícil fue conectar el frontend con la API. Lo resolví creando `src/api.js` con `fetch` y manejando los estados de carga y error.
