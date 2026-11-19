@@ -50,7 +50,6 @@ npm start      # modo normal
 | Método | Ruta | Descripción |
 | :----- | :--- | :---------- |
 | GET | `/api/salud` | Comprueba que el servidor responde |
-| GET | `/api/contacto` | Lista los últimos mensajes |
 | POST | `/api/contacto` | Guarda un mensaje del formulario |
 | GET | `/api/productos` | Lista productos; acepta `categoria`, `marcas`, `chipset`, `precioMin`, `precioMax`, `buscar` y `orden` |
 | GET | `/api/productos/filtros` | Categorías, marcas y rango de precios para el catálogo |
@@ -60,6 +59,10 @@ npm start      # modo normal
 | GET | `/api/auth/perfil` | Devuelve el usuario dueño del token (`Authorization: Bearer ...`) |
 | POST | `/api/auth/logout` | Cierra la sesión del lado del cliente |
 | POST | `/api/chat` | Envía mensajes al chatbot local de Ollama con contexto del catálogo |
+| GET | `/api/admin/resumen` | Métricas generales del panel (solo admin) |
+| GET/POST/PUT/DELETE | `/api/admin/productos` | Gestión de productos (solo admin) |
+| GET/PATCH/DELETE | `/api/admin/contactos` | Bandeja de mensajes (solo admin) |
+| GET/PATCH | `/api/admin/usuarios` | Gestión de usuarios y roles (solo admin) |
 
 ### Autenticación
 
@@ -69,6 +72,31 @@ npm start      # modo normal
 - El frontend guarda el token en `localStorage` y lo envía en la cabecera `Authorization` al pedir el perfil.
 - El header muestra el nombre del usuario y enlaza a `/cuenta` cuando hay sesión activa.
 - Si falta `JWT_SECRET`, el registro y el login responden con error. Reinicia el backend después de cambiar `.env`.
+
+### Panel de administración
+
+El panel interno está en `/admin` y solo se habilita para usuarios con rol `admin`. Las rutas `/api/admin/...` validan el rol en el backend; ocultar el enlace en la interfaz no es suficiente.
+
+Para crear el primer administrador:
+
+1. Creá una cuenta normal desde `/registro`.
+2. Ejecutá desde `backend`:
+
+```bash
+npm run hacer-admin -- tu-correo@ejemplo.com
+```
+
+3. Volvé a iniciar sesión. El login redirige automáticamente al panel.
+
+El panel permite:
+
+- Ver métricas generales y productos con stock bajo.
+- Crear, editar y eliminar productos.
+- Revisar los mensajes de contacto y cambiar su estado.
+- Ver usuarios, cambiar roles y activar o desactivar cuentas.
+- Evitar que se elimine o desactive el último administrador activo.
+
+El registro público siempre crea usuarios con rol `usuario`; nunca permite elegir `admin` desde el formulario.
 
 ### Cargar los productos de ejemplo
 
@@ -91,7 +119,7 @@ npm run dev
 
 Abre `http://localhost:5173`.
 
-Rutas principales: `/`, `/catalogo`, `/producto/:id`, `/carrito`, `/monitores`, `/contacto`, `/login`, `/registro` y `/cuenta`.
+Rutas principales: `/`, `/catalogo`, `/producto/:id`, `/carrito`, `/monitores`, `/contacto`, `/login`, `/registro`, `/cuenta` y `/admin` (solo administradores).
 
 Para apuntar a otra API, crea `frontend/.env`:
 

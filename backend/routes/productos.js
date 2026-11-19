@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Producto = require('../models/Producto');
-
 const router = express.Router();
 
 // Convierte un texto en un patrón seguro para búsquedas con regex.

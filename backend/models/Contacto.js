@@ -44,6 +44,11 @@ const contactoSchema = new mongoose.Schema(
             required: [true, 'El mensaje es obligatorio'],
             trim: true,
             maxlength: [2000, 'El mensaje no puede superar los 2000 caracteres']
+        },
+        estado: {
+            type: String,
+            enum: ['nuevo', 'leido', 'respondido'],
+            default: 'nuevo'
         }
     },
     {

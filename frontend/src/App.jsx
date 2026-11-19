@@ -13,6 +13,12 @@ import PaginaLogin from './components/PaginaLogin.jsx'
 import PaginaRegistro from './components/PaginaRegistro.jsx'
 import PaginaCuenta from './components/PaginaCuenta.jsx'
 import Chatbot from './components/Chatbot.jsx'
+import AdminLayout from './components/admin/AdminLayout.jsx'
+import AdminResumen from './components/admin/AdminResumen.jsx'
+import AdminProductos from './components/admin/AdminProductos.jsx'
+import AdminProductoForm from './components/admin/AdminProductoForm.jsx'
+import AdminContactos from './components/admin/AdminContactos.jsx'
+import AdminUsuarios from './components/admin/AdminUsuarios.jsx'
 import { useAuth } from './context/useAuth.js'
 
 // Al cambiar de ruta, la página vuelve arriba.
@@ -52,11 +58,37 @@ function RutaProtegida({ children }) {
   return children
 }
 
+// Solo deja entrar al panel a usuarios con rol de administrador.
+function RutaAdmin({ children }) {
+  const { usuario, cargando } = useAuth()
+
+  if (cargando) {
+    return (
+      <main className="auth-seccion">
+        <p className="auth-cargando">Cargando tu sesión...</p>
+      </main>
+    )
+  }
+
+  if (!usuario) {
+    return <Navigate to="/login" replace state={{ desde: '/admin' }} />
+  }
+
+  if (usuario.rol !== 'admin') {
+    return <Navigate to="/cuenta" replace />
+  }
+
+  return children
+}
+
 function App() {
+  const { pathname } = useLocation()
+  const esRutaAdmin = pathname === '/admin' || pathname.startsWith('/admin/')
+
   return (
     <>
       <ScrollToTop />
-      <Header />
+      {!esRutaAdmin && <Header />}
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/catalogo" element={<PaginaCatalogo />} />
@@ -74,10 +106,26 @@ function App() {
           }
         />
         <Route path="/producto/:id" element={<RutaProducto />} />
+        <Route
+          path="/admin"
+          element={
+            <RutaAdmin>
+              <AdminLayout />
+            </RutaAdmin>
+          }
+        >
+          <Route index element={<AdminResumen />} />
+          <Route path="productos" element={<AdminProductos />} />
+          <Route path="productos/nuevo" element={<AdminProductoForm />} />
+          <Route path="productos/:id" element={<AdminProductoForm />} />
+          <Route path="contactos" element={<AdminContactos />} />
+          <Route path="usuarios" element={<AdminUsuarios />} />
+          <Route path="*" element={<Navigate to="/admin" replace />} />
+        </Route>
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
-      <Footer />
-      <Chatbot />
+      {!esRutaAdmin && <Footer />}
+      {!esRutaAdmin && <Chatbot />}
     </>
   )
 }

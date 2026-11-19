@@ -24,6 +24,13 @@ async function requerirAutenticacion(req, res, next) {
             });
         }
 
+        if (usuario.activo === false) {
+            return res.status(401).json({
+                ok: false,
+                mensaje: 'Tu cuenta está desactivada'
+            });
+        }
+
         req.usuario = usuario;
         return next();
     } catch (error) {

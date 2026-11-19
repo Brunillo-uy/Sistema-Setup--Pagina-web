@@ -11,7 +11,8 @@ function PaginaLogin() {
   const [enviando, setEnviando] = useState(false)
 
   if (usuario) {
-    return <Navigate to={location.state?.desde || '/cuenta'} replace />
+    const destino = location.state?.desde || (usuario.rol === 'admin' ? '/admin' : '/cuenta')
+    return <Navigate to={destino} replace />
   }
 
   const manejarCambio = (evento) => {
@@ -25,8 +26,9 @@ function PaginaLogin() {
     setEnviando(true)
 
     try {
-      await iniciarSesion(formulario)
-      navigate(location.state?.desde || '/cuenta', { replace: true })
+      const usuarioLogueado = await iniciarSesion(formulario)
+      const destino = location.state?.desde || (usuarioLogueado.rol === 'admin' ? '/admin' : '/cuenta')
+      navigate(destino, { replace: true })
     } catch (err) {
       setError(err.message)
     } finally {

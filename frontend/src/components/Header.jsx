@@ -263,6 +263,11 @@ function Header() {
                         <Link to="/cuenta" className="enlace-menu-movil">
                             Mi cuenta ({nombreCorto})
                         </Link>
+                        {usuario.rol === 'admin' && (
+                            <Link to="/admin" className="enlace-menu-movil">
+                                Panel de administración
+                            </Link>
+                        )}
                         <button type="button" className="enlace-menu-movil" onClick={salir}>
                             Cerrar sesión
                         </button>

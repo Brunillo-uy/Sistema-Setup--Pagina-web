@@ -24,6 +24,15 @@ const usuarioSchema = new mongoose.Schema(
             minlength: [8, 'La contraseña debe tener al menos 8 caracteres'],
             select: false
         },
+        rol: {
+            type: String,
+            enum: ['usuario', 'admin'],
+            default: 'usuario'
+        },
+        activo: {
+            type: Boolean,
+            default: true
+        },
         ultimoAcceso: {
             type: Date,
             default: null

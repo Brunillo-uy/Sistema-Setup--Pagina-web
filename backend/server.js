@@ -7,6 +7,7 @@ const conectarDB = require('./config/db');
 const contactoRoutes = require('./routes/contacto');
 const productosRoutes = require('./routes/productos');
 const authRoutes = require('./routes/auth');
+const adminRoutes = require('./routes/admin');
 const chatRoutes = require('./routes/chat');
 const cors = require('cors');
 
@@ -57,6 +58,7 @@ app.use((req, res, next) => {
 app.use('/api/contacto', contactoRoutes);
 app.use('/api/productos', productosRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/admin', adminRoutes);
 app.use('/api/chat', chatRoutes);
 
 app.get('/api/salud', (req, res) => {

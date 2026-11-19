@@ -37,10 +37,27 @@ Debes ver la página, navegar entre Inicio / Catálogo / Monitores / Contacto y 
 | :------------- | :---------- | :------- |
 | `MONGO_URL`    | Sí          | Cadena de conexión de MongoDB Atlas |
 | `MONGO_DB`     | Sí          | Nombre de la base de datos |
+| `JWT_SECRET`   | Sí          | Clave larga y aleatoria para firmar sesiones |
+| `JWT_EXPIRA`   | No          | Duración del token; por defecto `7d` |
 | `PORT`         | No          | La asigna el hosting automáticamente |
 | `FRONTEND_URL` | No          | Solo si el frontend se despliega aparte |
 
 **Frontend:** `.env.production` ya define `VITE_API_URL=/api`.
+
+## Crear el primer administrador
+
+Después del primer arranque:
+
+1. Creá una cuenta normal desde `/registro`.
+2. Ejecutá desde la raíz del proyecto:
+
+```bash
+npm --prefix backend run hacer-admin -- tu-correo@ejemplo.com
+```
+
+3. Iniciá sesión de nuevo. La cuenta tendrá acceso a `/admin`.
+
+No agregues un formulario público para crear administradores ni pongas credenciales de admin en el frontend.
 
 ## Ejemplo con Render
 

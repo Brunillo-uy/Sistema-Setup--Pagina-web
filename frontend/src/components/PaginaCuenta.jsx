@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { useAuth } from '../context/useAuth.js'
 
 function PaginaCuenta() {
@@ -26,6 +27,10 @@ function PaginaCuenta() {
             <span>Email</span>
             <strong>{usuario.email}</strong>
           </p>
+          <p>
+            <span>Rol</span>
+            <strong>{usuario.rol === 'admin' ? 'Administrador' : 'Cliente'}</strong>
+          </p>
           {fechaRegistro && (
             <p>
               <span>Cuenta creada</span>
@@ -33,6 +38,12 @@ function PaginaCuenta() {
             </p>
           )}
         </div>
+
+        {usuario.rol === 'admin' && (
+          <Link to="/admin" className="auth-boton auth-boton-enlace">
+            Ir al panel de administración
+          </Link>
+        )}
 
         <button type="button" className="auth-boton" onClick={salir}>
           Cerrar sesión

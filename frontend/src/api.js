@@ -17,17 +17,6 @@ export function borrarToken() {
   localStorage.removeItem(TOKEN_KEY)
 }
 
-// GET /api/contacto -> devuelve la lista de mensajes guardados.
-export async function obtenerContactos() {
-  const respuesta = await fetch(`${API_URL}/contacto`)
-
-  if (!respuesta.ok) {
-    throw new Error(`Error ${respuesta.status} al obtener los contactos`)
-  }
-
-  return respuesta.json()
-}
-
 // POST /api/contacto -> guarda un mensaje del formulario.
 export async function enviarContacto(datos) {
   const respuesta = await fetch(`${API_URL}/contacto`, {
@@ -169,4 +158,113 @@ export async function obtenerPerfil() {
   }
 
   return resultado.usuario
+}
+
+// Convierte filtros del panel en query string.
+function construirQueryAdmin(filtros = {}) {
+  const params = new URLSearchParams()
+
+  if (filtros.buscar) params.set('buscar', filtros.buscar)
+  if (filtros.categoria) params.set('categoria', filtros.categoria)
+  if (filtros.estado) params.set('estado', filtros.estado)
+  if (filtros.rol) params.set('rol', filtros.rol)
+  if (filtros.activo !== '' && filtros.activo != null) {
+    params.set('activo', filtros.activo)
+  }
+  if (filtros.page) params.set('page', filtros.page)
+  if (filtros.limit) params.set('limit', filtros.limit)
+
+  const query = params.toString()
+  return query ? `?${query}` : ''
+}
+
+// Centraliza las llamadas al panel y agrega el token de sesión.
+async function pedirAdmin(ruta, opciones = {}) {
+  const token = leerToken()
+  const headers = {
+    ...(opciones.body ? { 'Content-Type': 'application/json' } : {}),
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    ...(opciones.headers || {}),
+  }
+
+  const respuesta = await fetch(`${API_URL}${ruta}`, {
+    ...opciones,
+    headers,
+  })
+
+  const resultado = await respuesta.json().catch(() => ({}))
+
+  if (!respuesta.ok) {
+    throw new Error(resultado.mensaje || `Error ${respuesta.status} en el panel`)
+  }
+
+  return resultado
+}
+
+export function obtenerAdminResumen() {
+  return pedirAdmin('/admin/resumen')
+}
+
+export function obtenerAdminProductos(filtros = {}) {
+  return pedirAdmin(`/admin/productos${construirQueryAdmin(filtros)}`)
+}
+
+export async function obtenerAdminProducto(id) {
+  const resultado = await pedirAdmin(`/admin/productos/${id}`)
+  return resultado.producto
+}
+
+export function crearAdminProducto(datos) {
+  return pedirAdmin('/admin/productos', {
+    method: 'POST',
+    body: JSON.stringify(datos),
+  })
+}
+
+export function actualizarAdminProducto(id, datos) {
+  return pedirAdmin(`/admin/productos/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(datos),
+  })
+}
+
+export function eliminarAdminProducto(id) {
+  return pedirAdmin(`/admin/productos/${id}`, {
+    method: 'DELETE',
+  })
+}
+
+export function obtenerAdminContactos(filtros = {}) {
+  return pedirAdmin(`/admin/contactos${construirQueryAdmin(filtros)}`)
+}
+
+export function actualizarAdminContacto(id, datos) {
+  return pedirAdmin(`/admin/contactos/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify(datos),
+  })
+}
+
+export function eliminarAdminContacto(id) {
+  return pedirAdmin(`/admin/contactos/${id}`, {
+    method: 'DELETE',
+  })
+}
+
+export function obtenerAdminUsuarios(filtros = {}) {
+  return pedirAdmin(`/admin/usuarios${construirQueryAdmin(filtros)}`)
+}
+
+export function actualizarAdminUsuarioRol(id, rol) {
+  return pedirAdmin(`/admin/usuarios/${id}/rol`, {
+    method: 'PATCH',
+    body: JSON.stringify({ rol }),
+  })
+}
+
+export function actualizarAdminUsuarioActivo(id, activo) {
+  return pedirAdmin(`/admin/usuarios/${id}/activo`, {
+    method: 'PATCH',
+    body: JSON.stringify({ activo }),
+  })
 }

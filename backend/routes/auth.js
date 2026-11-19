@@ -2,6 +2,7 @@ const express = require('express');
 const Usuario = require('../models/Usuario');
 const { crearToken } = require('../config/auth');
 const { requerirAutenticacion } = require('../middleware/auth');
+const { limiteAuth } = require('../middleware/limites');
 
 const router = express.Router();
 
@@ -13,13 +14,15 @@ function usuarioPublico(usuario) {
         id: usuario._id.toString(),
         nombre: usuario.nombre,
         email: usuario.email,
+        rol: usuario.rol || 'usuario',
+        activo: usuario.activo !== false,
         creadoEn: usuario.createdAt,
         ultimoAcceso: usuario.ultimoAcceso
     };
 }
 
 // POST /api/auth/registro -> crea una cuenta nueva.
-router.post('/registro', async (req, res) => {
+router.post('/registro', limiteAuth, async (req, res) => {
     try {
         const nombre = (req.body.nombre || '').trim();
         const email = (req.body.email || '').trim().toLowerCase();
@@ -62,7 +65,14 @@ router.post('/registro', async (req, res) => {
             });
         }
 
-        const usuario = await Usuario.create({ nombre, email, password });
+        // El registro público siempre crea clientes, nunca administradores.
+        const usuario = await Usuario.create({
+            nombre,
+            email,
+            password,
+            rol: 'usuario',
+            activo: true
+        });
 
         return res.status(201).json({
             ok: true,
@@ -96,7 +106,7 @@ router.post('/registro', async (req, res) => {
 });
 
 // POST /api/auth/login -> valida email y contraseña.
-router.post('/login', async (req, res) => {
+router.post('/login', limiteAuth, async (req, res) => {
     try {
         const email = (req.body.email || '').trim().toLowerCase();
         const password = req.body.password || '';
@@ -123,6 +133,13 @@ router.post('/login', async (req, res) => {
             return res.status(401).json({
                 ok: false,
                 mensaje: 'Email o contraseña incorrectos'
+            });
+        }
+
+        if (usuario.activo === false) {
+            return res.status(403).json({
+                ok: false,
+                mensaje: 'Tu cuenta está desactivada. Contactá al administrador.'
             });
         }
 
