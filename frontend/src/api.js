@@ -133,6 +133,23 @@ export async function iniciarSesionUsuario(datos) {
   return resultado
 }
 
+// POST /api/chat -> consulta al asistente virtual de Ollama.
+export async function enviarMensajeChat(mensajes) {
+  const respuesta = await fetch(`${API_URL}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ mensajes }),
+  })
+
+  const resultado = await respuesta.json()
+
+  if (!respuesta.ok) {
+    throw new Error(resultado.mensaje || 'No se pudo consultar al asistente')
+  }
+
+  return resultado.respuesta
+}
+
 // GET /api/auth/perfil -> recupera el usuario dueño del token guardado.
 export async function obtenerPerfil() {
   const token = leerToken()

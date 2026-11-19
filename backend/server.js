@@ -7,6 +7,7 @@ const conectarDB = require('./config/db');
 const contactoRoutes = require('./routes/contacto');
 const productosRoutes = require('./routes/productos');
 const authRoutes = require('./routes/auth');
+const chatRoutes = require('./routes/chat');
 const cors = require('cors');
 
 const app = express();
@@ -56,6 +57,7 @@ app.use((req, res, next) => {
 app.use('/api/contacto', contactoRoutes);
 app.use('/api/productos', productosRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/chat', chatRoutes);
 
 app.get('/api/salud', (req, res) => {
     res.json({ ok: true, mensaje: 'Servidor funcionando correctamente' });

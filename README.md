@@ -59,6 +59,7 @@ npm start      # modo normal
 | POST | `/api/auth/login` | Inicia sesión con `email` y `password` |
 | GET | `/api/auth/perfil` | Devuelve el usuario dueño del token (`Authorization: Bearer ...`) |
 | POST | `/api/auth/logout` | Cierra la sesión del lado del cliente |
+| POST | `/api/chat` | Envía mensajes al chatbot local de Ollama con contexto del catálogo |
 
 ### Autenticación
 
@@ -111,6 +112,30 @@ En producción, `.env.production` ya usa `/api` (mismo servidor).
 - La barra de búsqueda del header funciona en escritorio y en el menú móvil.
 - Al enviar un término, redirige a `/catalogo?buscar=...` y muestra los productos cuyo nombre, marca o descripción coincidan.
 - La búsqueda no distingue mayúsculas de minúsculas y también acepta coincidencias parciales del nombre.
+
+### Chatbot con Ollama
+
+El chatbot usa un modelo local mediante [Ollama](https://ollama.com/). No necesita claves de API ni envía las conversaciones a un servicio externo.
+
+1. Instalá Ollama.
+2. Descargá un modelo:
+
+```bash
+ollama pull llama3.2:3b
+```
+
+3. Verificá que Ollama esté ejecutándose en `http://127.0.0.1:11434`.
+4. Reiniciá el backend después de cambiar las variables de entorno.
+
+Variables opcionales en `backend/.env`:
+
+```env
+OLLAMA_URL=http://127.0.0.1:11434
+OLLAMA_MODEL=llama3.2:3b
+OLLAMA_TIMEOUT_MS=90000
+```
+
+El endpoint `POST /api/chat` recibe un historial de mensajes. Las consultas de productos y las preguntas frecuentes se responden con datos exactos de MongoDB y respuestas controladas; las consultas abiertas se envían al modelo local con contexto del catálogo. Si Ollama no está disponible, el chatbot muestra un mensaje de error y no bloquea el resto de la página.
 
 ### Carrito de compras
 

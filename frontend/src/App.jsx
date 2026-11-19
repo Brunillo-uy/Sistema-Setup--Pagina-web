@@ -12,6 +12,7 @@ import PaginaCarrito from './components/PaginaCarrito.jsx'
 import PaginaLogin from './components/PaginaLogin.jsx'
 import PaginaRegistro from './components/PaginaRegistro.jsx'
 import PaginaCuenta from './components/PaginaCuenta.jsx'
+import Chatbot from './components/Chatbot.jsx'
 import { useAuth } from './context/useAuth.js'
 
 // Al cambiar de ruta, la página vuelve arriba.
@@ -76,6 +77,7 @@ function App() {
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />
+      <Chatbot />
     </>
   )
 }
