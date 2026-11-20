@@ -43,7 +43,7 @@ function PaginaCarrito() {
         <section className="carrito-vacio">
           <p className="carrito-vacio-icono" aria-hidden="true">🛒</p>
           <h1>Tu carrito está vacío</h1>
-          <p>Todavía no agregaste productos. ¡Tu próximo setup te está esperando!</p>
+          <p>Todavía has agregado productos</p>
           <Link to="/catalogo" className="carrito-boton-catalogo">
             Ver catálogo
           </Link>
