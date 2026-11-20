@@ -1,4 +1,3 @@
-// Nombres de marca con su escritura correcta.
 export const MARCAS = {
   amd: 'AMD',
   nvidia: 'NVIDIA',

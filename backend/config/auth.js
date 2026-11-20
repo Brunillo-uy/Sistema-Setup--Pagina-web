@@ -7,7 +7,6 @@ if (!JWT_SECRET) {
     console.warn('JWT_SECRET no está configurado: el registro y el login no funcionarán.');
 }
 
-// Crea un token firmado con el ID del usuario.
 function crearToken(usuario) {
     if (!JWT_SECRET) {
         throw new Error('Falta configurar JWT_SECRET en backend/.env');
@@ -20,7 +19,6 @@ function crearToken(usuario) {
     );
 }
 
-// Verifica que el token sea válido y no haya expirado.
 function verificarToken(token) {
     if (!JWT_SECRET) {
         throw new Error('Falta configurar JWT_SECRET en backend/.env');

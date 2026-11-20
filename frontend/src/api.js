@@ -1,8 +1,5 @@
-// URL base de la API, tomada del archivo .env (VITE_API_URL).
-// Si no hay variable definida, usa /api (mismo servidor en producción).
 const API_URL = import.meta.env.VITE_API_URL || '/api'
 
-// Clave donde se guarda el token de sesión en el navegador.
 const TOKEN_KEY = 'sistema_setup_token'
 
 export function guardarToken(token) {
@@ -17,7 +14,6 @@ export function borrarToken() {
   localStorage.removeItem(TOKEN_KEY)
 }
 
-// POST /api/contacto -> guarda un mensaje del formulario.
 export async function enviarContacto(datos) {
   const respuesta = await fetch(`${API_URL}/contacto`, {
     method: 'POST',
@@ -34,7 +30,6 @@ export async function enviarContacto(datos) {
   return resultado
 }
 
-// Convierte un objeto de filtros en query string (?categoria=...&marcas=...).
 function construirQuery(filtros = {}) {
   const params = new URLSearchParams()
 
@@ -54,7 +49,6 @@ function construirQuery(filtros = {}) {
   return query ? `?${query}` : ''
 }
 
-// GET /api/productos -> lista de productos con filtros opcionales.
 export async function obtenerProductos(filtros = {}) {
   const respuesta = await fetch(`${API_URL}/productos${construirQuery(filtros)}`)
 
@@ -65,7 +59,6 @@ export async function obtenerProductos(filtros = {}) {
   return respuesta.json()
 }
 
-// GET /api/productos/filtros -> categorías, marcas y rango de precios.
 export async function obtenerFiltrosProductos() {
   const respuesta = await fetch(`${API_URL}/productos/filtros`)
 
@@ -76,7 +69,6 @@ export async function obtenerFiltrosProductos() {
   return respuesta.json()
 }
 
-// GET /api/productos/:id -> detalle de un producto puntual.
 export async function obtenerProducto(id) {
   const respuesta = await fetch(`${API_URL}/productos/${id}`)
   const resultado = await respuesta.json()
@@ -88,7 +80,6 @@ export async function obtenerProducto(id) {
   return resultado.producto
 }
 
-// POST /api/auth/registro -> crea una cuenta.
 export async function registrarUsuario(datos) {
   const respuesta = await fetch(`${API_URL}/auth/registro`, {
     method: 'POST',
@@ -105,7 +96,6 @@ export async function registrarUsuario(datos) {
   return resultado
 }
 
-// POST /api/auth/login -> inicia sesión con email y contraseña.
 export async function iniciarSesionUsuario(datos) {
   const respuesta = await fetch(`${API_URL}/auth/login`, {
     method: 'POST',
@@ -122,7 +112,6 @@ export async function iniciarSesionUsuario(datos) {
   return resultado
 }
 
-// POST /api/chat -> consulta al asistente virtual de Ollama.
 export async function enviarMensajeChat(mensajes) {
   const respuesta = await fetch(`${API_URL}/chat`, {
     method: 'POST',
@@ -139,7 +128,6 @@ export async function enviarMensajeChat(mensajes) {
   return resultado.respuesta
 }
 
-// GET /api/auth/perfil -> recupera el usuario dueño del token guardado.
 export async function obtenerPerfil() {
   const token = leerToken()
 
@@ -160,7 +148,6 @@ export async function obtenerPerfil() {
   return resultado.usuario
 }
 
-// Convierte filtros del panel en query string.
 function construirQueryAdmin(filtros = {}) {
   const params = new URLSearchParams()
 
@@ -178,7 +165,6 @@ function construirQueryAdmin(filtros = {}) {
   return query ? `?${query}` : ''
 }
 
-// Centraliza las llamadas al panel y agrega el token de sesión.
 async function pedirAdmin(ruta, opciones = {}) {
   const token = leerToken()
   const headers = {

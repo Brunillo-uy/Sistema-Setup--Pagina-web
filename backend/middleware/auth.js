@@ -1,7 +1,6 @@
 const Usuario = require('../models/Usuario');
 const { verificarToken } = require('../config/auth');
 
-// Protege rutas que necesitan un usuario autenticado.
 async function requerirAutenticacion(req, res, next) {
     const cabecera = req.headers.authorization || '';
     const token = cabecera.startsWith('Bearer ') ? cabecera.slice(7).trim() : '';

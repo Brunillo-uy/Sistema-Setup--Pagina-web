@@ -376,7 +376,6 @@ const construirContexto = async (texto) => {
     };
 };
 
-// POST /api/chat -> consulta al asistente local de Ollama con contexto del catálogo.
 router.post('/', limitarSolicitudes, async (req, res) => {
     const mensajes = normalizarMensajes(req.body?.mensajes);
 

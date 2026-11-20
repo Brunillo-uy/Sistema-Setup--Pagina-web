@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
-/**
- * Conecta la aplicación con MongoDB Atlas usando la URI del archivo .env
- */
+
 const conectarDB = async () => {
     const uri = process.env.MONGO_URL;
 

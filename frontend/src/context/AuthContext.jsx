@@ -13,7 +13,6 @@ export function AuthProvider({ children }) {
   const [usuario, setUsuario] = useState(null)
   const [cargando, setCargando] = useState(true)
 
-  // Al recargar la página, valida el token guardado.
   useEffect(() => {
     let activo = true
 

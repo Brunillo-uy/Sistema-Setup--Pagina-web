@@ -4,7 +4,6 @@ const conectarDB = require('../config/db');
 const Producto = require('../models/Producto');
 
 const productos = [
-    // --- Procesadores ---
     {
         nombre: 'Procesador CPU AMD Ryzen 5 5500 Socket AM4 6 Núcleos',
         marca: 'AMD',
@@ -70,7 +69,6 @@ const productos = [
         stock: 5
     },
 
-    // --- Tarjetas de video ---
     {
         nombre: 'Tarjeta de Video MSI GeForce RTX 5050 8GB Shadow 2X OC',
         marca: 'MSI',
@@ -205,7 +203,6 @@ const productos = [
         stock: 5
     },
     
-    // --- Memorias RAM ---
     {
         nombre: 'Memoria RAM DDR4 16GB 3200MHz Hiksemi Armor Black HSC416U32D2 1.2V CL22 UDIMM',
         marca: 'Hiksemi',
@@ -252,7 +249,6 @@ const productos = [
         stock: 10
     },
 
-    // --- Motherboards ---
     {
         nombre: 'Motherboard ASRock B550M-HDV Socket AM4 p/AMD Ryzen DDR4 mATX PCIe 4.0 M2',
         marca: 'ASRock',
@@ -420,7 +416,6 @@ const productos = [
         stock: 4
     },
 
-    // --- Almacenamiento ---
     {
         nombre: 'Disco Solido SSD M2 Kingston NV3 PCIe 4.0 Gen 4x4 NVMe 1TB 6000MB/S SNV3S/1000G',
         marca: 'Kingston',
@@ -489,7 +484,6 @@ const productos = [
         stock: 11
     },
 
-    // --- Fuentes de poder ---
     {
         nombre: 'Fuente MSI MAG A750BN 750W 80 Plus Bronce PCI-e 5.0 Fan 120mm Silencioso',
         marca: 'MSI',
@@ -577,7 +571,6 @@ const productos = [
         stock: 7
     },
 
-    // --- Gabinetes ---
     {
         nombre: 'Gabinete Corsair Air 5400 RS-R ARGB de Triple Cámara con Vidrio Panoramico Curvo - Negro',
         marca: 'Corsair',
@@ -719,7 +712,6 @@ const productos = [
             stock: 6
     },
 
-    // --- Monitores ---
     {
         nombre: 'Monitor LED VA Samsung Essential S3 32" Full HD 75Hz LS32B300NWNXGO HDMI DisplayPort Eye Saver Mode AMD FreeSync',
         marca: 'Samsung',
@@ -877,7 +869,6 @@ const productos = [
         stock: 4
     },
 
-    // --- Periféricos ---
     {
         nombre: 'Teclado Gaming Usb A HP Gk400f Inglés Mecánico Rgb',
         marca: 'HP',
@@ -981,7 +972,6 @@ const productos = [
         stock: 9
     },
 
-    // --- Ratones ---
     {
         nombre: 'Mouse Inalambrico USB Logitech M170 Red (Rojo)',
         marca: 'Logitech',
@@ -1058,7 +1048,6 @@ const productos = [
         stock: 10
     },
 
-    // --- Sillas ---
     {
         nombre: 'Silla Gamer Profesional Cougar Armor Elite White Cuero PVC Marco de Acero Calidad Premium - Blanca',
         marca: 'Cougar',
@@ -1176,7 +1165,6 @@ const productos = [
             stock: 3
     },
 
-    // --- Escritorios ---
     {
         nombre: 'Escritorio Mesa Pc Gamer Pro Laptop Estantes Gaming Color Rojo',
         marca: 'Mundo Shop',

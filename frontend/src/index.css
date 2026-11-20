@@ -20,7 +20,7 @@ a {
     text-decoration: none;
 }
 
-/* --- Barra de navegacion desktop --- */
+
 .navbar {
     display: flex;
     flex-direction: column;
@@ -307,7 +307,7 @@ a {
 }
 
 
-/* ---- Header para moviles ---- */
+
 .controles-movil {
     display: none;
 }
@@ -527,7 +527,7 @@ a {
 .submenu-interno-movil a:hover {
     background-color: #38bdf8;
 }
-/* Buscador */
+
 .container-buscador {
     width: 100%;
 }
@@ -550,7 +550,7 @@ a {
 }
 
 .buscador-btn {
-  background-color: #0f172a; /* Fondo azul muy oscuro / negro */
+  background-color: #0f172a;
   color: #ffffff;
   border: none;
   padding: 0 1.2rem;
@@ -561,9 +561,9 @@ a {
 }
 
 
-/* --- Banners Hero  --- */
+
 .banner-hero {
-    background-color: #7cd0ff; /* El azul claro del banner */
+    background-color: #7cd0ff;
     text-align: center;
     align-content: center;
     height: min(70vh, 80vh);
@@ -577,7 +577,7 @@ a {
     flex-shrink: 1;
 }
 
-/* Pagina de formula de Contacto*/
+
 .contacto-seccion {
     display: flex;
     flex-direction: row;
@@ -629,10 +629,10 @@ a {
     background-color: #0f172a;
 }
 textarea {
-  width: 100%;        /* Ocupa el 100% del ancho del contenedor */
-  max-width: 100%;    /* Evita que se salga del borde en celulares */
-  height: 100px;      /* Define una altura fija y razonable */
-  resize: vertical;   /* Evita que el usuario lo deforme hacia los lados */
+  width: 100%;
+  max-width: 100%;
+  height: 100px;
+  resize: vertical;
 }
 .boton-formulario {
     background-color: #2563eb;
@@ -646,34 +646,34 @@ textarea {
     background-color: #38bdf8;
     color: #2563eb
 }
-/*azul marino: #0f172a  //  azul: #2563eb // celeste: #38bdf8 // blanco:#f8fafc // gris claro: #e2e8f0  */
 
-/* --- SecciÃ³n del CatÃ¡logo (Principal) --- */
+
+
 .catalogo-seccion {
     background-color: #13192e;
     padding: 1rem 1rem;
     width: min(1200px, auto);
 }
 
-/* Contenedor de la CuadrÃ­cula (CSS Grid) */
+
 .catalogo-grid-div {
     display: grid;
-    /* Crea 3 columnas de igual ancho */
-    grid-template-columns: repeat(3, 1fr); 
-    /* Espacio entre los elementos de la cuadrÃ­cula */
+
+    grid-template-columns: repeat(3, 1fr);
+
     gap: 1.8rem;
     width: min(1200px, 85%);
-    margin: 0 auto; /* Centra la cuadrÃ­cula */
+    margin: 0 auto;
     align-content: center;
 }
 
-/* Estilo de los Elementos del CatÃ¡logo */
+
 .categoria-elemento {
-    background-color: #e2e8f0 ; /* El color verde claro de los elementos */
+    background-color: #e2e8f0 ;
     color: #0f172a;
     padding: 1rem 1rem;
     text-align: center;
-    border-radius: 8px; /* Bordes redondeados sutiles */
+    border-radius: 8px;
     align-content: center;
 
     img {
@@ -689,8 +689,8 @@ textarea {
 .catalogo-escritorio-img {
     width: min(14rem, 100%);
 }
-/* Nuevo catalogo */
-/* --- ESTILOS DEL CATÃLOGO DE PRODUCTOS --- */
+
+
 
 .catalogo-container {
     background-color: #ffffff;
@@ -715,14 +715,14 @@ textarea {
     color: #0f172a;
 }
 
-/* Estructura principal en 2 columnas */
+
 .catalogo-layout {
     display: flex;
     gap: 2.5rem;
     align-items: flex-start;
 }
 
-/* --- Sidebar Izquierdo (Filtros) --- */
+
 .sidebar-filtros {
     width: 220px;
     flex-shrink: 0;
@@ -770,12 +770,12 @@ textarea {
     cursor: pointer;
 }
 
-/* --- Columna Derecha (Productos) --- */
+
 .productos-seccion {
     flex: 1;
 }
 
-/* Toolbar superior */
+
 .productos-toolbar {
     display: flex;
     justify-content: space-between;
@@ -797,14 +797,14 @@ textarea {
     cursor: pointer;
 }
 
-/* Grilla de productos */
+
 .productos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
 }
 
-/* Tarjeta individual de producto */
+
 .producto-card {
     background-color: #ffffff;
     border: 1px solid #f1f5f9;
@@ -847,44 +847,44 @@ textarea {
 .producto-precio {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #dc2626; /* Color rojo para destacar el precio */
+    color: #dc2626;
 }
 
 
-/*  Footer  */
+
 .footer-background {
     background-color: #2563eb;
     width: 100%;
 }
 .footertabla {
-    display: flex; /* Coloca los enlaces en fila */
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     align-content: space-around;
     flex-direction: row;
     margin: 0 auto;
-    gap: 1rem; /* Espacio de separaciÃ³n entre cada enlace */
-    list-style: none; /* Quita los puntos de la lista */
+    gap: 1rem;
+    list-style: none;
     background-color: #2563eb;
     padding: 1rem;
     max-width: 1200px;
 }
 
-/* 5. Estilos de los enlaces (texto) */
+
 .footeritem {
     width: auto;
     height: auto;
     align-self: center;
     flex-shrink: 1;
-    color:#f8fafc; /* Color del texto */
+    color:#f8fafc;
     font-size: 0.9rem;
     font-family: "Inter", sans-serif;
 }
 
-/* --- RESPONSIVE MENOR A 768PX --- */
+
 @media (max-width: 768px) {
-    /* ocultamos todo lo del desktop */
+
     .contenedor-buscador,
     .iconos-usuario,
     .navbar-bottom,
@@ -992,7 +992,7 @@ textarea {
         background-color: #7cd0ff;
         text-align: center;
         padding-top: 30%;
-        padding-bottom: 30%; 
+        padding-bottom: 30%;
     }
     .contacto-seccion {
         flex-direction: column;
@@ -1005,7 +1005,7 @@ textarea {
         width: 100%;
         flex: 1;
         min-height: 0;
-        
+
         h1 {
             font-size: 3rem;
             font-weight: bold;
@@ -1034,9 +1034,7 @@ textarea {
         padding: 0.5rem 0.5rem;
     }
 }
-/* ============================================================
-   CatÃ¡logo de productos con sidebar (estilo referencia)
-   ============================================================ */
+
 .catalogo-container {
     display: flex;
     align-items: flex-start;
@@ -1460,7 +1458,7 @@ textarea {
 
 
 
-/* --- Tarjeta clicable --- */
+
 .producto-card {
     display: block;
     width: 100%;
@@ -1474,7 +1472,7 @@ textarea {
     outline-offset: 2px;
 }
 
-/* --- Página de detalle del producto --- */
+
 .producto-pagina {
     background-color: #13192e;
     color: #e2e8f0;
@@ -1804,7 +1802,7 @@ textarea {
     }
 }
 
-/* --- Registro, inicio de sesión y mi cuenta --- */
+
 .auth-seccion {
     flex: 1 1 auto;
     min-height: 70vh;
@@ -1985,7 +1983,7 @@ textarea {
     color: #991b1b;
 }
 
-/* --- Carrito de compras --- */
+
 .carrito-pagina {
     flex: 1 1 auto;
     min-height: 80vh;
@@ -2346,7 +2344,7 @@ textarea {
     }
 }
 
-/* --- Chatbot con Ollama --- */
+
 .chatbot {
     position: fixed;
     right: 1.25rem;
@@ -2587,7 +2585,7 @@ textarea {
     }
 }
 
-/* --- Panel de administracion --- */
+
 .auth-boton-enlace {
     display: block;
     text-align: center;
@@ -3411,7 +3409,7 @@ textarea {
     }
 }
 
-/* --- Portada: banner y catálogo horizontal --- */
+
 .solo-lectores {
     position: absolute;
     width: 1px;

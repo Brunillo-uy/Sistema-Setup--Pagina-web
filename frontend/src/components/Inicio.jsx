@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
-import Garantias from './Garantias.jsx'
 import ProductoCard from './ProductoCard.jsx'
 import { obtenerProductos } from '../api.js'
 

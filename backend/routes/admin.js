@@ -8,7 +8,6 @@ const { requerirAdmin } = require('../middleware/admin');
 
 const router = express.Router();
 
-// Todas las rutas del panel exigen sesión y rol de administrador.
 router.use(requerirAutenticacion, requerirAdmin);
 
 const ESTADOS_CONTACTO = ['nuevo', 'leido', 'respondido'];
@@ -104,7 +103,6 @@ function manejarError(res, error, contexto) {
     });
 }
 
-// GET /api/admin/resumen -> métricas generales del panel.
 router.get('/resumen', async (req, res) => {
     try {
         const [productos, stockBajo, usuarios, mensajesNuevos, productosStockBajo, ultimosMensajes] = await Promise.all([
@@ -145,7 +143,6 @@ router.get('/resumen', async (req, res) => {
     }
 });
 
-// GET /api/admin/productos -> listado paginado para el panel.
 router.get('/productos', async (req, res) => {
     try {
         const { page, limit, salto } = obtenerPaginacion(req);
@@ -185,7 +182,6 @@ router.get('/productos', async (req, res) => {
     }
 });
 
-// GET /api/admin/productos/:id -> detalle para editar.
 router.get('/productos/:id', async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
@@ -210,7 +206,6 @@ router.get('/productos/:id', async (req, res) => {
     }
 });
 
-// POST /api/admin/productos -> crea un producto.
 router.post('/productos', async (req, res) => {
     try {
         const producto = await Producto.create(datosProducto(req.body));
@@ -225,7 +220,6 @@ router.post('/productos', async (req, res) => {
     }
 });
 
-// PUT /api/admin/productos/:id -> actualiza un producto.
 router.put('/productos/:id', async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
@@ -258,7 +252,6 @@ router.put('/productos/:id', async (req, res) => {
     }
 });
 
-// DELETE /api/admin/productos/:id -> elimina un producto.
 router.delete('/productos/:id', async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
@@ -286,7 +279,6 @@ router.delete('/productos/:id', async (req, res) => {
     }
 });
 
-// GET /api/admin/contactos -> bandeja de mensajes.
 router.get('/contactos', async (req, res) => {
     try {
         const { page, limit, salto } = obtenerPaginacion(req);
@@ -341,7 +333,6 @@ router.get('/contactos', async (req, res) => {
     }
 });
 
-// PATCH /api/admin/contactos/:id -> cambia el estado del mensaje.
 router.patch('/contactos/:id', async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
@@ -386,7 +377,6 @@ router.patch('/contactos/:id', async (req, res) => {
     }
 });
 
-// DELETE /api/admin/contactos/:id -> elimina un mensaje.
 router.delete('/contactos/:id', async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
@@ -414,7 +404,6 @@ router.delete('/contactos/:id', async (req, res) => {
     }
 });
 
-// GET /api/admin/usuarios -> listado paginado de clientes y administradores.
 router.get('/usuarios', async (req, res) => {
     try {
         const { page, limit, salto } = obtenerPaginacion(req);
@@ -460,7 +449,6 @@ router.get('/usuarios', async (req, res) => {
     }
 });
 
-// PATCH /api/admin/usuarios/:id/rol -> cambia el rol de un usuario.
 router.patch('/usuarios/:id/rol', async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
@@ -522,7 +510,6 @@ router.patch('/usuarios/:id/rol', async (req, res) => {
     }
 });
 
-// PATCH /api/admin/usuarios/:id/activo -> activa o desactiva una cuenta.
 router.patch('/usuarios/:id/activo', async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {

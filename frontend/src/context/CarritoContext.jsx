@@ -32,12 +32,10 @@ function leerCarritoGuardado() {
 export function CarritoProvider({ children }) {
   const [items, setItems] = useState(leerCarritoGuardado)
 
-  // Guarda el carrito en el navegador para que sobreviva a las recargas.
   useEffect(() => {
     try {
       localStorage.setItem(CLAVE_CARRITO, JSON.stringify(items))
     } catch {
-      // Si el navegador bloquea localStorage, el carrito sigue funcionando en memoria.
     }
   }, [items])
 

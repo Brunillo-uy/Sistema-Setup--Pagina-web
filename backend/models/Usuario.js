@@ -44,7 +44,6 @@ const usuarioSchema = new mongoose.Schema(
     }
 );
 
-// Hashea la contraseña solo cuando se crea o se cambia.
 usuarioSchema.pre('save', async function () {
     if (!this.isModified('password')) return;
 
@@ -52,12 +51,10 @@ usuarioSchema.pre('save', async function () {
     this.password = await bcrypt.hash(this.password, sal);
 });
 
-// Compara la contraseña escrita por el usuario con la guardada.
 usuarioSchema.methods.compararPassword = function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-// Nunca devuelve la contraseña en las respuestas JSON.
 usuarioSchema.methods.toJSON = function () {
     const usuario = this.toObject();
     delete usuario.password;

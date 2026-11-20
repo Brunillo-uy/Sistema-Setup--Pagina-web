@@ -8,7 +8,6 @@ const router = express.Router();
 
 const EMAIL_VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Devuelve solo los datos públicos del usuario.
 function usuarioPublico(usuario) {
     return {
         id: usuario._id.toString(),
@@ -21,7 +20,6 @@ function usuarioPublico(usuario) {
     };
 }
 
-// POST /api/auth/registro -> crea una cuenta nueva.
 router.post('/registro', limiteAuth, async (req, res) => {
     try {
         const nombre = (req.body.nombre || '').trim();
@@ -65,7 +63,6 @@ router.post('/registro', limiteAuth, async (req, res) => {
             });
         }
 
-        // El registro público siempre crea clientes, nunca administradores.
         const usuario = await Usuario.create({
             nombre,
             email,
@@ -105,7 +102,6 @@ router.post('/registro', limiteAuth, async (req, res) => {
     }
 });
 
-// POST /api/auth/login -> valida email y contraseña.
 router.post('/login', limiteAuth, async (req, res) => {
     try {
         const email = (req.body.email || '').trim().toLowerCase();
@@ -161,7 +157,6 @@ router.post('/login', limiteAuth, async (req, res) => {
     }
 });
 
-// GET /api/auth/perfil -> devuelve el usuario dueño del token.
 router.get('/perfil', requerirAutenticacion, (req, res) => {
     return res.json({
         ok: true,
@@ -169,7 +164,6 @@ router.get('/perfil', requerirAutenticacion, (req, res) => {
     });
 });
 
-// POST /api/auth/logout -> el token se elimina en el navegador.
 router.post('/logout', (req, res) => {
     return res.json({
         ok: true,

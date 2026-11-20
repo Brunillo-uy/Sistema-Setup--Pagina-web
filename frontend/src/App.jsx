@@ -21,7 +21,6 @@ import AdminContactos from './components/admin/AdminContactos.jsx'
 import AdminUsuarios from './components/admin/AdminUsuarios.jsx'
 import { useAuth } from './context/useAuth.js'
 
-// Al cambiar de ruta, la página vuelve arriba.
 function ScrollToTop() {
   const { pathname } = useLocation()
 
@@ -32,14 +31,12 @@ function ScrollToTop() {
   return null
 }
 
-// Fuerza el remontaje de la página al cambiar de producto.
 function RutaProducto() {
   const { id } = useParams()
 
   return <PaginaProducto key={id} id={id} />
 }
 
-// Solo deja entrar a la cuenta si hay una sesión activa.
 function RutaProtegida({ children }) {
   const { usuario, cargando } = useAuth()
 
@@ -58,7 +55,6 @@ function RutaProtegida({ children }) {
   return children
 }
 
-// Solo deja entrar al panel a usuarios con rol de administrador.
 function RutaAdmin({ children }) {
   const { usuario, cargando } = useAuth()
 

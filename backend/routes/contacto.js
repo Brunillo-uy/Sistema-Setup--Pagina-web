@@ -4,7 +4,6 @@ const { limiteContacto } = require('../middleware/limites');
 
 const router = express.Router();
 
-// POST /api/contacto -> guarda un mensaje del formulario de contacto
 router.post('/', limiteContacto, async (req, res) => {
     try {
         const { nombre, apellido, email, fechaNacimiento, genero, titulo, mensaje } = req.body;

@@ -3,10 +3,8 @@ const mongoose = require('mongoose');
 const Producto = require('../models/Producto');
 const router = express.Router();
 
-// Convierte un texto en un patrón seguro para búsquedas con regex.
 const escaparRegex = (texto) => texto.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-// GET /api/productos/filtros -> categorías, marcas y rango de precios disponibles.
 router.get('/filtros', async (req, res) => {
     try {
         const [categorias, marcas, rango] = await Promise.all([
@@ -40,8 +38,6 @@ router.get('/filtros', async (req, res) => {
     }
 });
 
-// GET /api/productos -> lista productos con filtros opcionales.
-// Query: categoria, marcas, chipset (separados por coma), precioMin, precioMax, buscar, orden.
 router.get('/', async (req, res) => {
     try {
         const { categoria, marcas, chipset, precioMin, precioMax, buscar, orden } = req.query;
@@ -114,8 +110,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET /api/productos/:id -> devuelve un producto puntual.
-// Se define al final para no chocar con /filtros.
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;

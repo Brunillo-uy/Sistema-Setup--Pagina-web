@@ -1,4 +1,3 @@
-// Nombres legibles para las categorías que vienen de MongoDB.
 export const CATEGORIAS = {
   procesadores: 'Procesadores',
   'tarjetas-video': 'Tarjetas de video',
@@ -15,7 +14,6 @@ export const CATEGORIAS = {
   escritorios: 'Escritorios',
 }
 
-// Orden en el que se muestran las categorías en el catálogo.
 export const ORDEN_CATEGORIAS = [
   'procesadores',
   'tarjetas-video',
