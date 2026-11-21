@@ -16,7 +16,9 @@ const conectarDB = async () => {
 
     try {
         await mongoose.connect(uri, {
-            dbName: process.env.MONGO_DB || 'sistema_setup'
+            dbName: process.env.MONGO_DB || 'sistema_setup',
+            maxPoolSize: 10,
+            serverSelectionTimeoutMS: 10000
         });
 
         console.log(`MongoDB conectado -> ${mongoose.connection.host}/${mongoose.connection.name}`);

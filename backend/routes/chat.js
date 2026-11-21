@@ -443,6 +443,18 @@ router.post('/', limitarSolicitudes, async (req, res) => {
             });
         }
 
+        if (
+            process.env.OLLAMA_ACTIVO === 'false' ||
+            process.env.NETLIFY === 'true' ||
+            Boolean(process.env.AWS_LAMBDA_FUNCTION_NAME)
+        ) {
+            return res.json({
+                ok: true,
+                respuesta: 'Puedo ayudarte con productos, precios, stock, categorías, cómo comprar, cuenta, carrito y contacto. Para consultas más generales, escribinos desde /contacto.',
+                modelo: 'faq',
+            });
+        }
+
         const respuesta = await fetch(`${OLLAMA_URL}/api/chat`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
